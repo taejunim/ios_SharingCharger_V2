@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090C7261AA4C6005F2518 /* AppDelegate.swift */; };
+		C66090CA261AA4C6005F2518 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090C9261AA4C6005F2518 /* SceneDelegate.swift */; };
+		C66090CF261AA4C6005F2518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66090CD261AA4C6005F2518 /* Main.storyboard */; };
+		C66090D1261AA4C7005F2518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66090D0261AA4C7005F2518 /* Assets.xcassets */; };
+		C66090D4261AA4C7005F2518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66090D2261AA4C7005F2518 /* LaunchScreen.storyboard */; };
+		C66090E1261AA9FD005F2518 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66090E0261AA9FD005F2518 /* Login.storyboard */; };
+		C66090E4261AAEB2005F2518 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090E3261AAEB2005F2518 /* LoginViewController.swift */; };
+		C66090EB261AC706005F2518 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090EA261AC706005F2518 /* MainViewController.swift */; };
+		DC3DD612BA167EC7566C7643 /* Pods_SharingCharger_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35DED6EB496C57CB111200F /* Pods_SharingCharger_V2.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36DE4A3996AC4846ED649C69 /* Pods-SharingCharger_V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.release.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.release.xcconfig"; sourceTree = "<group>"; };
+		7FC2E17495C0C5FF867297F2 /* Pods-SharingCharger_V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.debug.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.debug.xcconfig"; sourceTree = "<group>"; };
+		C66090C4261AA4C6005F2518 /* SharingCharger_V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharingCharger_V2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66090C7261AA4C6005F2518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C66090C9261AA4C6005F2518 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C66090CE261AA4C6005F2518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C66090D0261AA4C7005F2518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C66090D3261AA4C7005F2518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C66090D5261AA4C7005F2518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66090E0261AA9FD005F2518 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		C66090E3261AAEB2005F2518 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C66090EA261AC706005F2518 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F35DED6EB496C57CB111200F /* Pods_SharingCharger_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharingCharger_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C66090C1261AA4C6005F2518 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3DD612BA167EC7566C7643 /* Pods_SharingCharger_V2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D2ECA70385F8CB683DE47C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F35DED6EB496C57CB111200F /* Pods_SharingCharger_V2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87FF574D2ADD9AA92B44E366 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FC2E17495C0C5FF867297F2 /* Pods-SharingCharger_V2.debug.xcconfig */,
+				36DE4A3996AC4846ED649C69 /* Pods-SharingCharger_V2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C66090BB261AA4C6005F2518 = {
+			isa = PBXGroup;
+			children = (
+				C66090C5261AA4C6005F2518 /* Products */,
+				C66090C6261AA4C6005F2518 /* SharingCharger_V2 */,
+				87FF574D2ADD9AA92B44E366 /* Pods */,
+				5D2ECA70385F8CB683DE47C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C66090C5261AA4C6005F2518 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C66090C4261AA4C6005F2518 /* SharingCharger_V2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C66090C6261AA4C6005F2518 /* SharingCharger_V2 */ = {
+			isa = PBXGroup;
+			children = (
+				C66090DD261AA8E3005F2518 /* ViewController */,
+				C66090DC261AA8D2005F2518 /* Storyboard */,
+				C66090C7261AA4C6005F2518 /* AppDelegate.swift */,
+				C66090C9261AA4C6005F2518 /* SceneDelegate.swift */,
+				C66090D0261AA4C7005F2518 /* Assets.xcassets */,
+				C66090D5261AA4C7005F2518 /* Info.plist */,
+			);
+			path = SharingCharger_V2;
+			sourceTree = "<group>";
+		};
+		C66090DC261AA8D2005F2518 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C66090D2261AA4C7005F2518 /* LaunchScreen.storyboard */,
+				C66090CD261AA4C6005F2518 /* Main.storyboard */,
+				C66090E0261AA9FD005F2518 /* Login.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C66090DD261AA8E3005F2518 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C66090E8261AC62A005F2518 /* MainStoryBoardViewController */,
+				C66090E7261AC610005F2518 /* LoginStoryBoardViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C66090E7261AC610005F2518 /* LoginStoryBoardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C66090E3261AAEB2005F2518 /* LoginViewController.swift */,
+			);
+			path = LoginStoryBoardViewController;
+			sourceTree = "<group>";
+		};
+		C66090E8261AC62A005F2518 /* MainStoryBoardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C66090EA261AC706005F2518 /* MainViewController.swift */,
+			);
+			path = MainStoryBoardViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C66090C3261AA4C6005F2518 /* SharingCharger_V2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66090D8261AA4C7005F2518 /* Build configuration list for PBXNativeTarget "SharingCharger_V2" */;
+			buildPhases = (
+				09C5207BE60986B5833DB7EA /* [CP] Check Pods Manifest.lock */,
+				C66090C0261AA4C6005F2518 /* Sources */,
+				C66090C1261AA4C6005F2518 /* Frameworks */,
+				C66090C2261AA4C6005F2518 /* Resources */,
+				E7B21CA8C5D23AE95FA2E9EA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharingCharger_V2;
+			productName = SharingCharger_V2;
+			productReference = C66090C4261AA4C6005F2518 /* SharingCharger_V2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C66090BC261AA4C6005F2518 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					C66090C3261AA4C6005F2518 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = C66090BF261AA4C6005F2518 /* Build configuration list for PBXProject "SharingCharger_V2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C66090BB261AA4C6005F2518;
+			productRefGroup = C66090C5261AA4C6005F2518 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C66090C3261AA4C6005F2518 /* SharingCharger_V2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C66090C2261AA4C6005F2518 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66090E1261AA9FD005F2518 /* Login.storyboard in Resources */,
+				C66090D4261AA4C7005F2518 /* LaunchScreen.storyboard in Resources */,
+				C66090D1261AA4C7005F2518 /* Assets.xcassets in Resources */,
+				C66090CF261AA4C6005F2518 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09C5207BE60986B5833DB7EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SharingCharger_V2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7B21CA8C5D23AE95FA2E9EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C66090C0261AA4C6005F2518 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66090E4261AAEB2005F2518 /* LoginViewController.swift in Sources */,
+				C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */,
+				C66090CA261AA4C6005F2518 /* SceneDelegate.swift in Sources */,
+				C66090EB261AC706005F2518 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C66090CD261AA4C6005F2518 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C66090CE261AA4C6005F2518 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C66090D2261AA4C7005F2518 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C66090D3261AA4C7005F2518 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C66090D6261AA4C7005F2518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C66090D7261AA4C7005F2518 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C66090D9261AA4C7005F2518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC2E17495C0C5FF867297F2 /* Pods-SharingCharger_V2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SW97KU77ZP;
+				INFOPLIST_FILE = SharingCharger_V2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.metisinfo.SharingCharger-V2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C66090DA261AA4C7005F2518 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36DE4A3996AC4846ED649C69 /* Pods-SharingCharger_V2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SW97KU77ZP;
+				INFOPLIST_FILE = SharingCharger_V2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.metisinfo.SharingCharger-V2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C66090BF261AA4C6005F2518 /* Build configuration list for PBXProject "SharingCharger_V2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66090D6261AA4C7005F2518 /* Debug */,
+				C66090D7261AA4C7005F2518 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66090D8261AA4C7005F2518 /* Build configuration list for PBXNativeTarget "SharingCharger_V2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66090D9261AA4C7005F2518 /* Debug */,
+				C66090DA261AA4C7005F2518 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C66090BC261AA4C6005F2518 /* Project object */;
+}
