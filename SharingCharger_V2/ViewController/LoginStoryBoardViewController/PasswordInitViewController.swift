@@ -12,10 +12,7 @@ class PasswordInitViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
-        
     }
-    
     
     @IBAction func passwordInitButton(_ sender: Any) {
        
@@ -23,5 +20,9 @@ class PasswordInitViewController: UIViewController, UITextFieldDelegate {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "PasswordInitComplete") as? PasswordInitCompleteViewController else { return }
        // viewController.userId = emailTextField.text!
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.title = ""
     }
 }

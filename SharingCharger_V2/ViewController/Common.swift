@@ -5,6 +5,7 @@
 //  Created by 조유영 on 2021/04/06.
 //
 import Toast_Swift
+import UIKit
 class Common {
     
     // Toast Message 띄우기
@@ -28,13 +29,89 @@ class Common {
         }
     }
     
-    // keyboard 설정
-    // 뷰 터치시 키보드 내리기
+    // keyboard 설정 - 뷰 터치시 키보드 내리기
     // @param  - UIView
     // @return - void
     static func setKeyboard(view : UIView) {
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+    }
+    
+    // Button able/disable, 색, 모서리 둥글게, Event 설정
+    // @param  -
+    // @return - void
+    static func setButton(button : UIButton, able : Bool, color : UIColor?, radius : CGFloat?, action : Selector?, target : Any?){
+        
+        //버튼색
+        if(color != nil){
+            button.layer.backgroundColor = color?.cgColor
+        }
+        //코너 둥근 정도
+        if(radius != nil){
+            button.layer.cornerRadius = radius!
+        }
+        //버튼 Event
+        if(action != nil){
+            button.addTarget(target, action: action!, for: .touchUpInside)
+        }
+        
+        //버튼 활성화 / 비활성화
+        if able {
+            button.isEnabled = true
+        } else {
+            button.isEnabled = false
+        }
+        
+    }
+    
+    // Button 테두리 두께, 색 설정
+    // @param  - 
+    // @return - void
+    static func setButtonBorder(button : UIButton, borderWidth : CGFloat, borderColor : UIColor){
+        
+        button.layer.borderWidth = borderWidth
+        button.layer.borderColor = borderColor.cgColor
+    }
+    
+    // NavigationBar Show / Hide
+    // @param  - NavigationController , Bool
+    // @return - void
+    static func showNavigationController(navigationController : UINavigationController!, show : Bool){
+        
+        if(show){
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            navigationController?.navigationBar.tintColor = UIColor.black  //백버튼 검은색으로
+            navigationController?.navigationBar.backItem?.title = ""       //백버튼 텍스트 제거
+            navigationController?.navigationBar.barTintColor = .white      //navigationBar 배경 흰색으로
+            navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        } else {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+        
+    }
+    
+    // Label Event 연결
+    // @param  - UIViewController , Selector , label
+    // @return - void
+    static func addGestureRecognizer(viewController : UIViewController, action : Selector, label : UILabel){
+        
+        let gesture = UITapGestureRecognizer(target: viewController, action: action)
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(gesture)
+    }
+    
+    // Navigation Controller rightMenu 추가
+    // @param  -
+    // @return - UIBarButtonItem
+    static func addRightMenu(imageName : String , action : Selector , menuSize : CGSize, viewController : UIViewController) -> UIBarButtonItem{
+        
+        let renderer = UIGraphicsImageRenderer(size : menuSize)
+        let image = UIImage(named: imageName)
+        let rightMenuImage = renderer.image{_ in image!.draw(in: CGRect(origin: .zero, size: menuSize))}
+        
+        let rightBarButton = UIBarButtonItem.init(image: rightMenuImage ,style: .done , target: viewController, action: action)
+        
+        return rightBarButton
     }
 }

@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-313" y="186"/>
         </scene>
-        <!--Password Init View Controller-->
+        <!--비밀번호 변경-->
         <scene sceneID="587-4Z-NLQ">
             <objects>
-                <viewController storyboardIdentifier="PasswordInit" id="s7V-Tg-gDF" customClass="PasswordInitViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordInit" title="비밀번호 변경" id="s7V-Tg-gDF" customClass="PasswordInitViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GzB-Rq-AcM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="-313.04347826086956" y="864.50892857142856"/>
         </scene>
-        <!--Password Init Complete View Controller-->
+        <!--비밀번호 변경-->
         <scene sceneID="wr1-Rh-hoe">
             <objects>
-                <viewController storyboardIdentifier="PasswordInitComplete" id="6du-fS-0vr" customClass="PasswordInitCompleteViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordInitComplete" title="비밀번호 변경" id="6du-fS-0vr" customClass="PasswordInitCompleteViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YtP-Ef-8Ky">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -721,6 +721,11 @@
                             <constraint firstItem="Vxn-Qt-QeD" firstAttribute="leading" secondItem="xF0-Aw-wum" secondAttribute="leading" id="x7k-lL-HSO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="Vxn-Qt-QeD" id="VJ2-gc-STM"/>
+                        <outlet property="privacyAgreeButton" destination="h29-SY-Qtk" id="0yb-bk-gpY"/>
+                        <outlet property="serviceUsePolicyButton" destination="1oE-pA-ttu" id="hWA-fW-8dX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Soj-BO-we1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

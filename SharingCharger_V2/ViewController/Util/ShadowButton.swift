@@ -28,7 +28,6 @@ class ShadowButton: UIButton {
             shadowLayer.masksToBounds = false   // 내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
 
             layer.insertSublayer(shadowLayer, at: 0)
-            //layer.insertSublayer(shadowLayer, below: nil) // also works
         }
     }
     

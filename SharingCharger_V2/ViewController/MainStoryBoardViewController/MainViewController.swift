@@ -24,12 +24,13 @@ class MainViewController: UIViewController, MTMapViewDelegate {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        
+        Common.showNavigationController(navigationController : self.navigationController , show : true)
         super.viewWillDisappear(animated)
     }
     
-    //navigation bar 숨기기
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        Common.showNavigationController(navigationController : self.navigationController , show : false)
         super.viewWillAppear(animated)
         
         //위치 권한이 없으면 위치 권한 메시지 띄움
@@ -117,15 +118,13 @@ class MainViewController: UIViewController, MTMapViewDelegate {
     //사이드 메뉴 버튼
     @objc func menuButton(sender: UIButton!) {
         print("MainViewController - menuButton tapped")
-        
         self.performSegue(withIdentifier: "segueToLeftMenu", sender: self)
     }
     
     //주소 찾기 버튼
     @objc func addressButton(sender: UIButton!) {
         print("MainViewController - addressButton tapped")
-        //self.performSegue(withIdentifier: "segueToAddress", sender: self)
-        
+        self.performSegue(withIdentifier: "segueToAddress", sender: self)
     }
     
     //위치 권한 체크
@@ -149,13 +148,13 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         
         if segue.identifier == "segueToLeftMenu" {
             if let sideMenuNavigationController = segue.destination as? SideMenuNavigationController {
-                
                 sideMenuNavigationController.settings = makeSettings()
             }
         }
         
-        /*if segue.identifier == "segueToAddress" {
-            if let searchingAddressViewController = segue.destination as? SearchingAddressViewController {
+        if segue.identifier == "segueToAddress" {
+            print("좌표 넘기기 예제")
+            /*if let searchingAddressViewController = segue.destination as? AddressViewController {
                 
                 if let userLatitude = locationManager.location?.coordinate.latitude , let userLongitude = locationManager.location?.coordinate.longitude{
                 
@@ -171,8 +170,8 @@ class MainViewController: UIViewController, MTMapViewDelegate {
 
                 searchingAddressViewController.defaultAddress = (self.addressView.titleLabel?.text)!
                 searchingAddressViewController.delegate       = self
-            }
-        }*/
+            }*/
+        }
     }
     
     private func selectedPresentationStyle() -> SideMenuPresentationStyle {

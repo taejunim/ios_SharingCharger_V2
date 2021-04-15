@@ -13,6 +13,10 @@
 		0E815CF52627E081001FFD11 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */; };
 		C632A4EA2626702800DA604B /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A4E92626702800DA604B /* LeftMenuViewController.swift */; };
 		C632A4F12626826800DA604B /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A4F02626826800DA604B /* ShadowButton.swift */; };
+		C632A5032626ED1800DA604B /* ChargerUseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */; };
+		C632A5062626EDF500DA604B /* ChargerUseHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A5052626EDF500DA604B /* ChargerUseHistoryCell.swift */; };
+		C63BCA2D26281413008BDBEE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BCA2C26281413008BDBEE /* Utils.swift */; };
+		C63BCA3026281717008BDBEE /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BCA2F26281717008BDBEE /* AddressViewController.swift */; };
 		C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090C7261AA4C6005F2518 /* AppDelegate.swift */; };
 		C66090CA261AA4C6005F2518 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090C9261AA4C6005F2518 /* SceneDelegate.swift */; };
 		C66090CF261AA4C6005F2518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66090CD261AA4C6005F2518 /* Main.storyboard */; };
@@ -69,6 +73,10 @@
 		7FC2E17495C0C5FF867297F2 /* Pods-SharingCharger_V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.debug.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.debug.xcconfig"; sourceTree = "<group>"; };
 		C632A4E92626702800DA604B /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		C632A4F02626826800DA604B /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerUseHistoryViewController.swift; sourceTree = "<group>"; };
+		C632A5052626EDF500DA604B /* ChargerUseHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerUseHistoryCell.swift; sourceTree = "<group>"; };
+		C63BCA2C26281413008BDBEE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C63BCA2F26281717008BDBEE /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		C66090C4261AA4C6005F2518 /* SharingCharger_V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharingCharger_V2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66090C7261AA4C6005F2518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66090C9261AA4C6005F2518 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,8 +183,17 @@
 			isa = PBXGroup;
 			children = (
 				C632A4F02626826800DA604B /* ShadowButton.swift */,
+				C63BCA2C26281413008BDBEE /* Utils.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		C632A5002626EABB00DA604B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C632A5052626EDF500DA604B /* ChargerUseHistoryCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C66090BB261AA4C6005F2518 = {
@@ -246,10 +263,13 @@
 		C66090E8261AC62A005F2518 /* MainStoryBoardViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C632A5002626EABB00DA604B /* Cell */,
 				C66090EA261AC706005F2518 /* MainViewController.swift */,
 				C632A4E92626702800DA604B /* LeftMenuViewController.swift */,
 				0E815CE82626CFE0001FFD11 /* SettingViewController.swift */,
 				0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */,
+				C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */,
+				C63BCA2F26281717008BDBEE /* AddressViewController.swift */,
 			);
 			path = MainStoryBoardViewController;
 			sourceTree = "<group>";
@@ -467,13 +487,17 @@
 				C660910A261C4A39005F2518 /* Common.swift in Sources */,
 				0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */,
 				C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */,
+				C63BCA2D26281413008BDBEE /* Utils.swift in Sources */,
 				C66090CA261AA4C6005F2518 /* SceneDelegate.swift in Sources */,
 				C632A4F12626826800DA604B /* ShadowButton.swift in Sources */,
+				C632A5062626EDF500DA604B /* ChargerUseHistoryCell.swift in Sources */,
 				C66090FE261B0398005F2518 /* JoinViewController.swift in Sources */,
 				C632A4EA2626702800DA604B /* LeftMenuViewController.swift in Sources */,
+				C63BCA3026281717008BDBEE /* AddressViewController.swift in Sources */,
 				0E815CF52627E081001FFD11 /* PasswordChangeViewController.swift in Sources */,
 				C66090EB261AC706005F2518 /* MainViewController.swift in Sources */,
 				0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */,
+				C632A5032626ED1800DA604B /* ChargerUseHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +641,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = BF9CP282RW;
+				DEVELOPMENT_TEAM = SW97KU77ZP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharingCharger_V2/Library/DaumMap.embeddedframework",
@@ -646,7 +670,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = BF9CP282RW;
+				DEVELOPMENT_TEAM = SW97KU77ZP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharingCharger_V2/Library/DaumMap.embeddedframework",

@@ -34,11 +34,36 @@
                     <connections>
                         <outlet property="mapView" destination="eFD-zb-Iam" id="R6s-xW-5ft"/>
                         <segue destination="HAN-HQ-0ZS" kind="presentation" identifier="segueToLeftMenu" id="lWd-ZH-F7l"/>
+                        <segue destination="Gg7-32-ydx" kind="presentation" identifier="segueToAddress" id="cie-o2-Iie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsv-Ap-UWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-894" y="-204"/>
+        </scene>
+        <!--Address View Controller-->
+        <scene sceneID="fJ0-kG-HGN">
+            <objects>
+                <viewController id="Gg7-32-ydx" customClass="AddressViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jiK-MN-bSB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="검색 조건 ---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heE-9f-1xz">
+                                <rect key="frame" x="162" y="438" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I9d-k4-M7U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGi-x3-lH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-91" y="-204"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Tjk-Tm-RRa">
@@ -106,7 +131,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46,746" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="he6-f5-NTg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46,746" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="he6-f5-NTg">
                                 <rect key="frame" x="302" y="133" width="79.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" name="Color_3498DB"/>
@@ -144,40 +169,34 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="ny3-hx-5BW"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4a-Yf-Dfp">
-                                <rect key="frame" x="0.0" y="266.5" width="414" height="412"/>
+                                <rect key="frame" x="0.0" y="266.5" width="414" height="350"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2I-56-nV6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="충전기 사용 이력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWm-yS-fRE">
                                         <rect key="frame" x="20" y="30" width="394" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="충전기 사용 이력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWm-yS-fRE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전자지갑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTb-Er-jgd">
                                         <rect key="frame" x="20" y="92" width="394" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전자지갑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTb-Er-jgd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE6-eu-taV">
                                         <rect key="frame" x="20" y="154" width="394" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE6-eu-taV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 증명서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39M-PL-bKZ">
                                         <rect key="frame" x="20" y="216" width="394" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 증명서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39M-PL-bKZ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고객센터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th5-6M-vUS">
                                         <rect key="frame" x="20" y="278" width="394" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="충전 이력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th5-6M-vUS">
-                                        <rect key="frame" x="20" y="340" width="394" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -190,14 +209,12 @@
                                     <constraint firstAttribute="trailing" secondItem="DTb-Er-jgd" secondAttribute="trailing" id="79I-dI-7PW"/>
                                     <constraint firstAttribute="trailing" secondItem="Th5-6M-vUS" secondAttribute="trailing" id="D5I-hh-uhB"/>
                                     <constraint firstAttribute="bottom" secondItem="Th5-6M-vUS" secondAttribute="bottom" constant="50" id="Ma6-7O-tqK"/>
-                                    <constraint firstItem="R2I-56-nV6" firstAttribute="top" secondItem="n4a-Yf-Dfp" secondAttribute="top" constant="30" id="afh-19-B1k"/>
                                     <constraint firstItem="aE6-eu-taV" firstAttribute="top" secondItem="DTb-Er-jgd" secondAttribute="bottom" constant="40" id="cDd-rj-78D"/>
                                     <constraint firstItem="Th5-6M-vUS" firstAttribute="top" secondItem="39M-PL-bKZ" secondAttribute="bottom" constant="40" id="e5x-rP-8lv"/>
-                                    <constraint firstItem="CWm-yS-fRE" firstAttribute="top" secondItem="R2I-56-nV6" secondAttribute="bottom" constant="40" id="fBL-0M-zzL"/>
                                     <constraint firstItem="DTb-Er-jgd" firstAttribute="top" secondItem="CWm-yS-fRE" secondAttribute="bottom" constant="40" id="fYy-SN-O8b"/>
+                                    <constraint firstItem="CWm-yS-fRE" firstAttribute="top" secondItem="n4a-Yf-Dfp" secondAttribute="top" constant="30" id="wfv-zy-0mj"/>
                                     <constraint firstItem="39M-PL-bKZ" firstAttribute="top" secondItem="aE6-eu-taV" secondAttribute="bottom" constant="40" id="wyL-vC-jfg"/>
                                     <constraint firstAttribute="trailing" secondItem="CWm-yS-fRE" secondAttribute="trailing" id="xBk-D6-v10"/>
-                                    <constraint firstAttribute="trailing" secondItem="R2I-56-nV6" secondAttribute="trailing" id="yCy-W4-vZn"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -234,7 +251,6 @@
                             <constraint firstAttribute="trailing" secondItem="mTJ-aR-Y1x" secondAttribute="trailing" id="lZM-lf-pWZ"/>
                             <constraint firstItem="DJr-dQ-aVn" firstAttribute="top" secondItem="9rU-nj-vkJ" secondAttribute="bottom" id="lmp-6z-hDw"/>
                             <constraint firstItem="39M-PL-bKZ" firstAttribute="leading" secondItem="cyP-Fh-yzy" secondAttribute="leading" id="onE-ff-hoQ"/>
-                            <constraint firstItem="R2I-56-nV6" firstAttribute="leading" secondItem="cyP-Fh-yzy" secondAttribute="leading" id="pnH-T6-kCl"/>
                             <constraint firstItem="n4a-Yf-Dfp" firstAttribute="leading" secondItem="mX5-H3-WKt" secondAttribute="leading" id="qV3-QT-qui"/>
                             <constraint firstItem="mTJ-aR-Y1x" firstAttribute="leading" secondItem="CS1-lb-ELx" secondAttribute="leading" id="rmc-Rt-ErN"/>
                             <constraint firstItem="he6-f5-NTg" firstAttribute="firstBaseline" secondItem="nya-av-f7J" secondAttribute="firstBaseline" id="tjQ-br-bRL"/>
@@ -244,15 +260,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="czv-nR-M5u"/>
+                    <connections>
+                        <outlet property="callCenterButton" destination="Th5-6M-vUS" id="ckd-yV-t6U"/>
+                        <outlet property="chargerUseHistoryButton" destination="CWm-yS-fRE" id="UNT-eD-IUw"/>
+                        <outlet property="electronicWalletButton" destination="DTb-Er-jgd" id="5tq-zN-SvP"/>
+                        <outlet property="favoriteButton" destination="aE6-eu-taV" id="fB2-aR-uWW"/>
+                        <outlet property="userCertificationButton" destination="39M-PL-bKZ" id="wGT-7T-2TJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxd-Es-P86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-91.304347826086968" y="490.84821428571428"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--설정-->
         <scene sceneID="nFV-EN-yYx">
             <objects>
-                <viewController storyboardIdentifier="Setting" id="CMh-F7-ySr" customClass="SettingViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" title="설정" id="CMh-F7-ySr" customClass="SettingViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X7P-Kq-MAz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,10 +350,10 @@
             </objects>
             <point key="canvasLocation" x="717.39130434782612" y="490.84821428571428"/>
         </scene>
-        <!--Password Change View Controller-->
+        <!--비밀번호 변경-->
         <scene sceneID="60d-BO-3x1">
             <objects>
-                <viewController storyboardIdentifier="PasswordChange" id="fR0-Qf-THn" customClass="PasswordChangeViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordChange" title="비밀번호 변경" id="fR0-Qf-THn" customClass="PasswordChangeViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXI-rR-viE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,13 +384,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkH-eY-aRB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 비밀번호*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNJ-IN-Dw9" userLabel="Label Current Password" customClass="AppendStar" customModule="SharingCharger" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 비밀번호*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNJ-IN-Dw9" userLabel="Label Current Password" customClass="AppendStar" customModule="SharingCharger_V2" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="30" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28a-cA-FCH" userLabel="Text Current Password" customClass="CustomTextField" customModule="SharingCharger" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28a-cA-FCH" userLabel="Text Current Password" customClass="CustomTextField" customModule="SharingCharger_V2" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="58" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
@@ -377,13 +400,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀번호*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQE-Hb-mTu" userLabel="Label Password" customClass="AppendStar" customModule="SharingCharger" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀번호*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQE-Hb-mTu" userLabel="Label Password" customClass="AppendStar" customModule="SharingCharger_V2" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="106" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DbL-1h-zKZ" userLabel="Text Password" customClass="CustomTextField" customModule="SharingCharger" customModuleProvider="target">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DbL-1h-zKZ" userLabel="Text Password" customClass="CustomTextField" customModule="SharingCharger_V2" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="134" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
@@ -393,13 +416,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀번호 확인*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYi-iu-Fu6" userLabel="Label Password Confirm" customClass="AppendStar" customModule="SharingCharger" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀번호 확인*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYi-iu-Fu6" userLabel="Label Password Confirm" customClass="AppendStar" customModule="SharingCharger_V2" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="182" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKV-cJ-bwS" userLabel="Text Password Confirm" customClass="CustomTextField" customModule="SharingCharger" customModuleProvider="target">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKV-cJ-bwS" userLabel="Text Password Confirm" customClass="CustomTextField" customModule="SharingCharger_V2" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="210" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -478,9 +501,167 @@
             </objects>
             <point key="canvasLocation" x="1522" y="491"/>
         </scene>
+        <!--충전 이력-->
+        <scene sceneID="yVF-tY-9NE">
+            <objects>
+                <viewController storyboardIdentifier="ChargerUseHistory" title="충전 이력" id="yEe-fz-2hZ" customClass="ChargerUseHistoryViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sAT-Dl-zdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMq-20-Pan" userLabel="Top Line">
+                                <rect key="frame" x="0.0" y="44" width="414" height="7"/>
+                                <color key="backgroundColor" name="Color_EFEFEF"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="7" id="waj-6W-LQU"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boN-lW-xtu">
+                                <rect key="frame" x="0.0" y="51" width="414" height="811"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="150" id="Vjm-jo-3sJ" customClass="ChargerUseHistoryCell" customModule="SharingCharger_V2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vjm-jo-3sJ" id="Akp-tZ-zo4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Hiu-53-K8q">
+                                                    <rect key="frame" x="40" y="31" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="7a7-El-iUW"/>
+                                                        <constraint firstAttribute="height" constant="20" id="8JZ-Vd-zr9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관광대학교 주차장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY5-oU-mI4">
+                                                    <rect key="frame" x="72" y="32.5" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_clock" translatesAutoresizingMaskIntoConstraints="NO" id="tWR-Fb-f2F">
+                                                    <rect key="frame" x="40" y="61" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="YMH-ys-ICR"/>
+                                                        <constraint firstAttribute="width" constant="20" id="eSU-Yo-yEa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-07-23 18:00 ~ 2020-07-23 21:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-xV-eRC">
+                                                    <rect key="frame" x="72" y="62.5" width="256.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="a56-9H-IGt">
+                                                    <rect key="frame" x="40" y="91" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="DPC-cB-fHJ"/>
+                                                        <constraint firstAttribute="width" constant="20" id="zyV-hI-19o"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,562 포인트 사용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3v-ae-s0i">
+                                                    <rect key="frame" x="72" y="92.5" width="105.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bgE-xV-eRC" firstAttribute="leading" secondItem="bY5-oU-mI4" secondAttribute="leading" id="03P-th-HAe"/>
+                                                <constraint firstItem="Hiu-53-K8q" firstAttribute="top" secondItem="Akp-tZ-zo4" secondAttribute="topMargin" constant="20" id="6iA-Bn-MAg"/>
+                                                <constraint firstItem="a56-9H-IGt" firstAttribute="top" secondItem="tWR-Fb-f2F" secondAttribute="bottom" constant="10" id="F0R-qb-zCo"/>
+                                                <constraint firstItem="Hiu-53-K8q" firstAttribute="leading" secondItem="Akp-tZ-zo4" secondAttribute="leadingMargin" constant="20" id="bOJ-rF-SYb"/>
+                                                <constraint firstItem="u3v-ae-s0i" firstAttribute="leading" secondItem="bgE-xV-eRC" secondAttribute="leading" id="cLR-mo-snR"/>
+                                                <constraint firstItem="u3v-ae-s0i" firstAttribute="centerY" secondItem="a56-9H-IGt" secondAttribute="centerY" id="eXN-Zq-d64"/>
+                                                <constraint firstItem="tWR-Fb-f2F" firstAttribute="top" secondItem="Hiu-53-K8q" secondAttribute="bottom" constant="10" id="fKS-OU-N0D"/>
+                                                <constraint firstItem="a56-9H-IGt" firstAttribute="leading" secondItem="Hiu-53-K8q" secondAttribute="leading" id="ghE-eb-htg"/>
+                                                <constraint firstItem="bgE-xV-eRC" firstAttribute="centerY" secondItem="tWR-Fb-f2F" secondAttribute="centerY" id="o37-QN-xUS"/>
+                                                <constraint firstItem="bY5-oU-mI4" firstAttribute="leading" secondItem="Hiu-53-K8q" secondAttribute="trailing" constant="12" id="o5q-Ak-dBX"/>
+                                                <constraint firstItem="bY5-oU-mI4" firstAttribute="centerY" secondItem="Hiu-53-K8q" secondAttribute="centerY" id="oSb-gh-Hnw"/>
+                                                <constraint firstItem="tWR-Fb-f2F" firstAttribute="leading" secondItem="Hiu-53-K8q" secondAttribute="leading" id="rTK-6G-c0r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chargerLocation" destination="bY5-oU-mI4" id="SSw-0r-Rax"/>
+                                            <outlet property="chargingPeriod" destination="bgE-xV-eRC" id="MY1-La-nyP"/>
+                                            <outlet property="usePoint" destination="u3v-ae-s0i" id="1eI-vg-f3G"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TiL-VM-xA8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="boN-lW-xtu" firstAttribute="top" secondItem="HMq-20-Pan" secondAttribute="bottom" id="2g3-NP-ERS"/>
+                            <constraint firstItem="TiL-VM-xA8" firstAttribute="trailing" secondItem="boN-lW-xtu" secondAttribute="trailing" id="FKH-hZ-5z9"/>
+                            <constraint firstItem="TiL-VM-xA8" firstAttribute="bottom" secondItem="boN-lW-xtu" secondAttribute="bottom" id="TdI-9d-Tj1"/>
+                            <constraint firstItem="HMq-20-Pan" firstAttribute="leading" secondItem="sAT-Dl-zdJ" secondAttribute="leading" id="dWf-V2-jAH"/>
+                            <constraint firstItem="boN-lW-xtu" firstAttribute="leading" secondItem="TiL-VM-xA8" secondAttribute="leading" id="p7Z-J0-fC5"/>
+                            <constraint firstItem="TiL-VM-xA8" firstAttribute="top" secondItem="HMq-20-Pan" secondAttribute="top" id="smW-ag-b4v"/>
+                            <constraint firstAttribute="trailing" secondItem="HMq-20-Pan" secondAttribute="trailing" id="xgR-Ox-b3U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="boN-lW-xtu" id="0j3-PH-VSV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bn5-YX-c7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-91.304347826086968" y="1195.9821428571429"/>
+        </scene>
+        <!--전자 지갑-->
+        <scene sceneID="hiC-5p-jWa">
+            <objects>
+                <viewController storyboardIdentifier="ElectronicWallet" title="전자 지갑" id="YEE-u8-dnD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="33V-BG-VLQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vec-QX-NuE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efR-fO-4Gv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701" y="1196"/>
+        </scene>
+        <!--즐겨찾기-->
+        <scene sceneID="ICx-ZH-bdw">
+            <objects>
+                <viewController storyboardIdentifier="Favorite" title="즐겨찾기" id="cOi-wK-JlB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g7B-VH-bJQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vYX-2f-HWm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23H-mh-Wx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="1196"/>
+        </scene>
+        <!--회원 증명서-->
+        <scene sceneID="yaB-GH-3Br">
+            <objects>
+                <viewController storyboardIdentifier="UserCertification" title="회원 증명서" id="WMY-Bb-Lcb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jj1-tT-wk8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bge-vD-YW2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YWz-KW-VWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2355" y="1196"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Image_clock" width="30" height="30"/>
+        <image name="coin" width="60" height="60"/>
         <image name="greaterthan" catalog="system" width="128" height="111"/>
+        <image name="pin_blue" width="150" height="150"/>
         <image name="setting" width="48" height="48"/>
         <namedColor name="Color_3498DB">
             <color red="0.20399999618530273" green="0.59200000762939453" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -11,6 +11,4 @@ class PasswordInitCompleteViewController: UIViewController, UITextFieldDelegate 
         super.viewDidLoad()
         
     }
-    
-    
 }
