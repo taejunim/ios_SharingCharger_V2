@@ -16,4 +16,12 @@ class LeftMenuViewController: UIViewController {
         
     }
     
+    @IBAction func settingButton(_ sender: Any) {
+        print("LeftMenuViewController - Button tapped")
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Setting") else { return }
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
 }

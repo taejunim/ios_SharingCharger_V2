@@ -51,6 +51,13 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func passwordInitButton(_ sender: Any) {
+        
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "PasswordInit") else { return }
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         
