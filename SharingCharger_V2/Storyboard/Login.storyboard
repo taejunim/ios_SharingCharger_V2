@@ -444,7 +444,7 @@
         <!--Join View Controller-->
         <scene sceneID="1AP-VK-tuS">
             <objects>
-                <viewController storyboardIdentifier="Join" id="RyN-QR-ghe" customClass="JoinViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="회원가입" id="RyN-QR-ghe" customClass="JoinViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lnD-HQ-ZC2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

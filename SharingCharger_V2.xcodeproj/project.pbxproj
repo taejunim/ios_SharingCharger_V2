@@ -17,6 +17,7 @@
 		C632A5062626EDF500DA604B /* ChargerUseHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A5052626EDF500DA604B /* ChargerUseHistoryCell.swift */; };
 		C63BCA2D26281413008BDBEE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BCA2C26281413008BDBEE /* Utils.swift */; };
 		C63BCA3026281717008BDBEE /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BCA2F26281717008BDBEE /* AddressViewController.swift */; };
+		C63BCA3326283BC0008BDBEE /* ElectronicWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */; };
 		C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090C7261AA4C6005F2518 /* AppDelegate.swift */; };
 		C66090CA261AA4C6005F2518 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66090C9261AA4C6005F2518 /* SceneDelegate.swift */; };
 		C66090CF261AA4C6005F2518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66090CD261AA4C6005F2518 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		C632A5052626EDF500DA604B /* ChargerUseHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerUseHistoryCell.swift; sourceTree = "<group>"; };
 		C63BCA2C26281413008BDBEE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C63BCA2F26281717008BDBEE /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectronicWalletViewController.swift; sourceTree = "<group>"; };
 		C66090C4261AA4C6005F2518 /* SharingCharger_V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharingCharger_V2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66090C7261AA4C6005F2518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66090C9261AA4C6005F2518 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */,
 				C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */,
 				C63BCA2F26281717008BDBEE /* AddressViewController.swift */,
+				C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */,
 			);
 			path = MainStoryBoardViewController;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				0E815CF52627E081001FFD11 /* PasswordChangeViewController.swift in Sources */,
 				C66090EB261AC706005F2518 /* MainViewController.swift in Sources */,
 				0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */,
+				C63BCA3326283BC0008BDBEE /* ElectronicWalletViewController.swift in Sources */,
 				C632A5032626ED1800DA604B /* ChargerUseHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
