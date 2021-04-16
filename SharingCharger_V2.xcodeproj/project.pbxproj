@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6215F62626B09800585932 /* PasswordInitViewController.swift */; };
 		0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */; };
+		0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */; };
+		0E6A1BDD262963CB007C476C /* HistoryPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A1BDC262963CB007C476C /* HistoryPointViewController.swift */; };
 		0E815CE92626CFE0001FFD11 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CE82626CFE0001FFD11 /* SettingViewController.swift */; };
 		0E815CF52627E081001FFD11 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */; };
+		0E815CFA2628361B001FFD11 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CF92628361B001FFD11 /* FavoriteCell.swift */; };
+		0E815D0126292989001FFD11 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815D0026292989001FFD11 /* FavoriteViewController.swift */; };
 		C632A4EA2626702800DA604B /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A4E92626702800DA604B /* LeftMenuViewController.swift */; };
 		C632A4F12626826800DA604B /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A4F02626826800DA604B /* ShadowButton.swift */; };
 		C632A5032626ED1800DA604B /* ChargerUseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */; };
@@ -68,8 +72,12 @@
 /* Begin PBXFileReference section */
 		0E6215F62626B09800585932 /* PasswordInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInitViewController.swift; sourceTree = "<group>"; };
 		0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInitCompleteViewController.swift; sourceTree = "<group>"; };
+		0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPointTableCell.swift; sourceTree = "<group>"; };
+		0E6A1BDC262963CB007C476C /* HistoryPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPointViewController.swift; sourceTree = "<group>"; };
 		0E815CE82626CFE0001FFD11 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
+		0E815CF92628361B001FFD11 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		0E815D0026292989001FFD11 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		36DE4A3996AC4846ED649C69 /* Pods-SharingCharger_V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.release.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.release.xcconfig"; sourceTree = "<group>"; };
 		7FC2E17495C0C5FF867297F2 /* Pods-SharingCharger_V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.debug.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.debug.xcconfig"; sourceTree = "<group>"; };
 		C632A4E92626702800DA604B /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				C632A5052626EDF500DA604B /* ChargerUseHistoryCell.swift */,
+				0E815CF92628361B001FFD11 /* FavoriteCell.swift */,
+				0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -273,6 +283,8 @@
 				C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */,
 				C63BCA2F26281717008BDBEE /* AddressViewController.swift */,
 				C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */,
+				0E815D0026292989001FFD11 /* FavoriteViewController.swift */,
+				0E6A1BDC262963CB007C476C /* HistoryPointViewController.swift */,
 			);
 			path = MainStoryBoardViewController;
 			sourceTree = "<group>";
@@ -487,8 +499,11 @@
 			files = (
 				C66090E4261AAEB2005F2518 /* LoginViewController.swift in Sources */,
 				0E815CE92626CFE0001FFD11 /* SettingViewController.swift in Sources */,
+				0E6A1BDD262963CB007C476C /* HistoryPointViewController.swift in Sources */,
+				0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */,
 				C660910A261C4A39005F2518 /* Common.swift in Sources */,
 				0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */,
+				0E815D0126292989001FFD11 /* FavoriteViewController.swift in Sources */,
 				C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */,
 				C63BCA2D26281413008BDBEE /* Utils.swift in Sources */,
 				C66090CA261AA4C6005F2518 /* SceneDelegate.swift in Sources */,
@@ -502,6 +517,7 @@
 				0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */,
 				C63BCA3326283BC0008BDBEE /* ElectronicWalletViewController.swift in Sources */,
 				C632A5032626ED1800DA604B /* ChargerUseHistoryViewController.swift in Sources */,
+				0E815CFA2628361B001FFD11 /* FavoriteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +661,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = SW97KU77ZP;
+				DEVELOPMENT_TEAM = BF9CP282RW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharingCharger_V2/Library/DaumMap.embeddedframework",
@@ -674,7 +690,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = SW97KU77ZP;
+				DEVELOPMENT_TEAM = BF9CP282RW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharingCharger_V2/Library/DaumMap.embeddedframework",
