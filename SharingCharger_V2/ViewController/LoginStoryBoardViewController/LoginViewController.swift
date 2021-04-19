@@ -75,4 +75,23 @@ class LoginViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewWillAppear(animated)
     }
+    
+    @IBAction func temp1(_ sender: Any) {
+        let viewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Reservation")
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func temp2(_ sender: Any) {
+        let viewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "ChargerSearch")
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func temp3(_ sender: Any) {
+        let viewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Charge")
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }

@@ -404,6 +404,30 @@
                                     <action selector="passwordInitButton:" destination="56I-sV-9js" eventType="touchUpInside" id="d7d-eI-bFf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r0-gd-Sye">
+                                <rect key="frame" x="55" y="719" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="예약진행"/>
+                                <connections>
+                                    <action selector="temp1:" destination="56I-sV-9js" eventType="touchUpInside" id="38W-2P-uiH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvr-QI-1GG">
+                                <rect key="frame" x="329" y="719" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="충전"/>
+                                <connections>
+                                    <action selector="temp3:" destination="56I-sV-9js" eventType="touchUpInside" id="q6H-LD-U41"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abh-en-mld">
+                                <rect key="frame" x="196" y="719" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="충전기 검색"/>
+                                <connections>
+                                    <action selector="temp2:" destination="56I-sV-9js" eventType="touchUpInside" id="B9k-3g-mCc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="29g-9b-LsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialBottomSheet
 
 class ChargerUseHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -43,7 +44,12 @@ class ChargerUseHistoryViewController: UIViewController, UITableViewDelegate, UI
     }
     
     @objc func rightMenu(){
-        print("오른쪽 메뉴")
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChargerUseHistorySearchCondition") else { return }
+        
+        let bottomSheet = Common.createHistorySearchCondition(rootViewController: self, sheetViewController : viewController)
+        present(bottomSheet, animated: true, completion: nil)
+        
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
 }

@@ -6,6 +6,8 @@
 //
 import Toast_Swift
 import UIKit
+import MaterialComponents.MaterialBottomSheet
+
 class Common {
     
     // Toast Message 띄우기
@@ -113,5 +115,33 @@ class Common {
         let rightBarButton = UIBarButtonItem.init(image: rightMenuImage ,style: .done , target: viewController, action: action)
         
         return rightBarButton
+    }
+    
+    // 이력조회 bottomeSheet 생성
+    // @param  -
+    // @return - UIBarButtonItem
+    static func createHistorySearchCondition(rootViewController : UIViewController, sheetViewController : UIViewController) -> MDCBottomSheetController {
+        
+        let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: sheetViewController)
+        bottomSheet.preferredContentSize = CGSize(width: rootViewController.view.frame.size.width, height: rootViewController.view.frame.size.height)
+        
+        let shapeGenerator = MDCCurvedRectShapeGenerator(cornerSize: CGSize(width: 15, height: 15))
+        bottomSheet.setShapeGenerator(shapeGenerator, for: .preferred)
+        bottomSheet.setShapeGenerator(shapeGenerator, for: .extended)
+        bottomSheet.setShapeGenerator(shapeGenerator, for: .closed)
+        
+        return bottomSheet
+    }
+    
+    // 팝업 - 검색조건, 예약 팝업 상단 버튼 추가
+    // @param  -
+    // @return - UIViewController
+    static func addTopButton(buttonName: String?, width: CGFloat?, height: CGFloat?, top: CGFloat?, left: CGFloat?, right: CGFloat?, bottom: CGFloat?, target: AnyObject, targetViewController: UIViewController) {
+        
+        let button = CustomButton(type: .system)
+        
+        targetViewController.view.addSubview(button)
+        
+        button.setAttributes(buttonName: buttonName, width: width, height: height, top: top, left: left, right: right, bottom: bottom, target: target, targetViewController: targetViewController)
     }
 }
