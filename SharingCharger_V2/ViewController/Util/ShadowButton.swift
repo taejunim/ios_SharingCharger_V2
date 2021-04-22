@@ -3,7 +3,9 @@
 //  SharingCharger
 //
 //  Created by tjlim on 2020/09/09.
-//  Copyright © 2020 metisinfo. All rights reserved.
+//  Modified by 조유영 on 2021/04/20.
+//  Description - 기존 ShadowButton ShadowCircleView 합치기
+//  Copyright © 2021 metisinfo. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +13,7 @@ import UIKit
 class ShadowButton: UIButton {
 
     private var shadowLayer: CAShapeLayer!
+    var isCircle = false
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -18,7 +21,11 @@ class ShadowButton: UIButton {
         if shadowLayer == nil {
             
             shadowLayer = CAShapeLayer()
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 4).cgPath
+            if isCircle {
+                shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
+            } else {
+                shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 4).cgPath
+            }
             shadowLayer.fillColor = UIColor.white.cgColor   // 버튼 내부 색상
             shadowLayer.shadowColor = UIColor.gray.cgColor  // 그림자 색상
             shadowLayer.shadowPath = shadowLayer.path
@@ -57,7 +64,20 @@ class ShadowButton: UIButton {
             self.addTarget(MainViewController(), action: #selector(MainViewController.addressButton), for: .touchUpInside)
 
             break
+           
+        case "currentLocation":
             
+            let imageLayer = CALayer()
+            
+            imageLayer.frame = CGRect(x:0, y:0, width: width!, height: height!)
+            imageLayer.bounds = imageLayer.frame.insetBy(dx: 5.0, dy: 5.0)
+            imageLayer.contents = UIImage(named: "current_location")?.cgImage
+
+            layer.addSublayer(imageLayer)
+            
+            self.addTarget(MainViewController(), action: #selector(MainViewController.currentLocationTrackingModeButton), for: .touchUpInside)
+            
+            break
         default:
             break
         }

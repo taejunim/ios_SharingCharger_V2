@@ -461,7 +461,7 @@
         <!--Join View Controller-->
         <scene sceneID="1AP-VK-tuS">
             <objects>
-                <viewController storyboardIdentifier="회원가입" id="RyN-QR-ghe" customClass="JoinViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Join" id="RyN-QR-ghe" customClass="JoinViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lnD-HQ-ZC2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -739,7 +739,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autorizationCodeTextField" destination="9vD-Ys-ycA" id="6uh-6f-zgj"/>
                         <outlet property="confirmButton" destination="Vxn-Qt-QeD" id="VJ2-gc-STM"/>
+                        <outlet property="emailTextField" destination="Ggz-84-ekO" id="2nM-63-TqB"/>
+                        <outlet property="nameTextField" destination="Hzj-mb-3x6" id="etz-Yc-n9a"/>
+                        <outlet property="passwordConfrimTextField" destination="Me7-Id-Hpj" id="fOO-1c-Tkh"/>
+                        <outlet property="passwordTextField" destination="PYd-8W-9Bm" id="Ikg-xk-zOo"/>
+                        <outlet property="phoneNumberTextField" destination="mbV-pB-KB3" id="MOw-41-3yx"/>
                         <outlet property="privacyAgreeButton" destination="h29-SY-Qtk" id="0yb-bk-gpY"/>
                         <outlet property="serviceUsePolicyButton" destination="1oE-pA-ttu" id="hWA-fW-8dX"/>
                     </connections>

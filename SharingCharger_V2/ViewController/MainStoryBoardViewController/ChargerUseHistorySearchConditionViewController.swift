@@ -42,7 +42,6 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
         Common.addTopButton(buttonName: "close", width: 40, height: 40, top: 15, left: 15, right: nil, bottom: nil, target: self.view, targetViewController: self)
         Common.addTopButton(buttonName: "refresh", width: 40, height: 40, top: 15, left: nil, right: -15, bottom: nil, target: self.view, targetViewController: self)
         
-        
         activateView(active: false)
         
         periodButtonArray.append(oneMonth)

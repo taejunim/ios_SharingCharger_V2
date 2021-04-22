@@ -48,16 +48,16 @@ class CustomButton: UIButton {
             
             break
         
-        /*case "bottomButton":
+        case "bottomButton":
             
             self.layer.cornerRadius = 7
             self.backgroundColor = UIColor(named: "Color_3498DB")
             self.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(18))
             self.setTitleColor(.white, for: .normal)
             self.setTitle("충전하기", for: .normal)
-            self.addTarget(MainViewController(), action: #selector(MainViewController.reservationButton), for: .touchUpInside)
+            //self.addTarget(MainViewController(), action: #selector(MainViewController.reservationButton), for: .touchUpInside)
             
-            break*/
+            break
             
         default:
             break
