@@ -1,8 +1,8 @@
 //
 //  HistoryPointTableCell.swift
 //  SharingCharger_V2
-//
-//  Created by guava on 2021/04/16.
+//  Description - 포인트 이력 tableCell
+//  Created by 김재연 on 2021/04/16.
 //
 
 class HistoryPointTableCell:UITableViewCell {

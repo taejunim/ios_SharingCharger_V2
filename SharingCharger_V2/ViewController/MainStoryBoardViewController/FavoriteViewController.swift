@@ -1,8 +1,8 @@
 //
 //  FavoriteViewController.swift
 //  SharingCharger_V2
-//
-//  Created by guava on 2021/04/16.
+//  Description - 즐겨찾기 ViewController
+//  Created by 김재연 on 2021/04/16.
 //
 
 class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -11,7 +11,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.allowsSelection = false
@@ -31,5 +31,5 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         
         return 120
     }
-
+    
 }

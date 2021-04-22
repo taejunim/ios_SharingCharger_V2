@@ -116,7 +116,6 @@
                                             <constraint firstAttribute="trailing" secondItem="M2t-Ng-nDy" secondAttribute="trailing" constant="25" id="G3r-oO-MTt"/>
                                             <constraint firstItem="qIs-CS-ztQ" firstAttribute="leading" secondItem="M2t-Ng-nDy" secondAttribute="leading" id="IAZ-Om-lgc"/>
                                             <constraint firstItem="0pN-sO-JbH" firstAttribute="leading" secondItem="M2t-Ng-nDy" secondAttribute="leading" id="LOV-62-Ng1"/>
-                                            <constraint firstItem="eHj-QY-OOz" firstAttribute="leading" secondItem="1Ap-vJ-f2h" secondAttribute="leading" id="LcM-72-0ph"/>
                                             <constraint firstItem="1Ap-vJ-f2h" firstAttribute="leading" secondItem="M2t-Ng-nDy" secondAttribute="leading" id="Lfh-ME-eca"/>
                                             <constraint firstItem="qIs-CS-ztQ" firstAttribute="trailing" secondItem="M2t-Ng-nDy" secondAttribute="trailing" id="Oif-RT-pF7"/>
                                             <constraint firstItem="91w-lT-fL8" firstAttribute="trailing" secondItem="eHj-QY-OOz" secondAttribute="trailing" id="Ruf-ug-Hoc"/>
@@ -132,7 +131,6 @@
                                             <constraint firstItem="Zn9-nb-rt9" firstAttribute="trailing" secondItem="91w-lT-fL8" secondAttribute="trailing" id="dcm-rG-csu"/>
                                             <constraint firstItem="M2t-Ng-nDy" firstAttribute="leading" secondItem="vPC-tk-2Fs" secondAttribute="leading" constant="25" id="eqV-MF-GUT"/>
                                             <constraint firstItem="eHj-QY-OOz" firstAttribute="leading" secondItem="M2t-Ng-nDy" secondAttribute="leading" id="fxB-Gw-Mnb"/>
-                                            <constraint firstItem="eHj-QY-OOz" firstAttribute="leading" secondItem="1Ap-vJ-f2h" secondAttribute="leading" id="j15-gX-1z5"/>
                                             <constraint firstItem="0pN-sO-JbH" firstAttribute="top" secondItem="Zn9-nb-rt9" secondAttribute="bottom" constant="10" id="jiR-75-YqO"/>
                                             <constraint firstItem="91w-lT-fL8" firstAttribute="trailing" secondItem="M2t-Ng-nDy" secondAttribute="trailing" id="jkO-C8-Q8d"/>
                                             <constraint firstItem="M2t-Ng-nDy" firstAttribute="top" secondItem="vPC-tk-2Fs" secondAttribute="top" constant="30" id="kaB-qm-kcu"/>
@@ -158,7 +156,6 @@
                                 <color key="backgroundColor" name="Color_EFEFEF"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="7" id="IHL-ch-Xsn"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="7" id="wWZ-KH-vqU"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VI2-x5-R1K">
@@ -275,16 +272,12 @@
                                             <constraint firstItem="c1y-Dr-Pap" firstAttribute="leading" secondItem="sxx-qj-gAJ" secondAttribute="leading" constant="25" id="ZvL-xS-pNo"/>
                                             <constraint firstAttribute="trailing" secondItem="Vku-Fi-SeB" secondAttribute="trailing" constant="25" id="bkP-Rp-LtR"/>
                                             <constraint firstItem="TsF-uB-c1J" firstAttribute="trailing" secondItem="Rvf-fW-xve" secondAttribute="trailing" id="dSl-xM-TfY"/>
-                                            <constraint firstItem="c1y-Dr-Pap" firstAttribute="top" secondItem="TsF-uB-c1J" secondAttribute="bottom" constant="10" id="dzm-eR-mWh"/>
                                             <constraint firstItem="TsF-uB-c1J" firstAttribute="top" secondItem="Vku-Fi-SeB" secondAttribute="bottom" constant="30" id="fCa-OG-av8"/>
                                             <constraint firstItem="Rvf-fW-xve" firstAttribute="top" secondItem="sxx-qj-gAJ" secondAttribute="top" constant="30" id="gZG-el-Xga"/>
                                             <constraint firstAttribute="trailing" secondItem="c1y-Dr-Pap" secondAttribute="trailing" constant="25" id="hJH-uh-b09"/>
                                             <constraint firstItem="c1y-Dr-Pap" firstAttribute="top" secondItem="TsF-uB-c1J" secondAttribute="bottom" constant="10" id="jut-qs-Kpk"/>
-                                            <constraint firstAttribute="trailing" secondItem="c1y-Dr-Pap" secondAttribute="trailing" constant="25" id="ls9-by-W7Y"/>
                                             <constraint firstItem="Rvf-fW-xve" firstAttribute="leading" secondItem="sxx-qj-gAJ" secondAttribute="leading" constant="25" id="ngk-gw-6Ce"/>
-                                            <constraint firstAttribute="bottom" secondItem="c1y-Dr-Pap" secondAttribute="bottom" constant="30" id="r8c-uJ-nun"/>
                                             <constraint firstItem="TsF-uB-c1J" firstAttribute="leading" secondItem="sxx-qj-gAJ" secondAttribute="leading" constant="25" id="ryi-HG-XjK"/>
-                                            <constraint firstItem="c1y-Dr-Pap" firstAttribute="leading" secondItem="sxx-qj-gAJ" secondAttribute="leading" constant="25" id="wec-SU-wsd"/>
                                             <constraint firstItem="c1y-Dr-Pap" firstAttribute="trailing" secondItem="Rvf-fW-xve" secondAttribute="trailing" id="wyr-3S-8ef"/>
                                         </constraints>
                                     </view>
@@ -294,6 +287,7 @@
                                     <constraint firstItem="sxx-qj-gAJ" firstAttribute="width" secondItem="1Jw-0v-pEP" secondAttribute="width" id="KxH-a2-vrz"/>
                                     <constraint firstItem="sxx-qj-gAJ" firstAttribute="top" secondItem="JGL-MA-vZ6" secondAttribute="top" id="N0V-jO-cuI"/>
                                     <constraint firstItem="sxx-qj-gAJ" firstAttribute="bottom" secondItem="JGL-MA-vZ6" secondAttribute="bottom" id="TsV-ON-5wc"/>
+                                    <constraint firstItem="1Jw-0v-pEP" firstAttribute="bottom" secondItem="sxx-qj-gAJ" secondAttribute="bottom" constant="589" id="WvI-lp-xNQ"/>
                                     <constraint firstItem="sxx-qj-gAJ" firstAttribute="leading" secondItem="JGL-MA-vZ6" secondAttribute="leading" id="dCa-WB-gEH"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="JGL-MA-vZ6"/>
@@ -312,7 +306,6 @@
                             <constraint firstItem="WoW-SF-nww" firstAttribute="top" secondItem="Zx3-tx-wlp" secondAttribute="top" id="Y7p-yX-glH"/>
                             <constraint firstAttribute="trailing" secondItem="WoW-SF-nww" secondAttribute="trailing" id="aFD-zw-Il3"/>
                             <constraint firstItem="Nzp-Jf-CJa" firstAttribute="leading" secondItem="Zx3-tx-wlp" secondAttribute="leading" id="ahl-jF-PGf"/>
-                            <constraint firstItem="Nzp-Jf-CJa" firstAttribute="top" secondItem="WoW-SF-nww" secondAttribute="bottom" id="gcB-TZ-PEy"/>
                             <constraint firstItem="Zx3-tx-wlp" firstAttribute="trailing" secondItem="Nzp-Jf-CJa" secondAttribute="trailing" id="o3r-dD-FV7"/>
                             <constraint firstItem="WoW-SF-nww" firstAttribute="leading" secondItem="YtP-Ef-8Ky" secondAttribute="leading" id="wj1-ak-WiP"/>
                             <constraint firstItem="Zx3-tx-wlp" firstAttribute="bottom" secondItem="ETA-vs-xAi" secondAttribute="bottom" id="xOy-e3-Ku8"/>

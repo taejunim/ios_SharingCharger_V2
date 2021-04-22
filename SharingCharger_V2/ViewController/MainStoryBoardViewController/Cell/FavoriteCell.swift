@@ -1,8 +1,8 @@
 //
 //  FavoriteCell.swift
 //  SharingCharger_V2
-//
-//  Created by guava on 2021/04/15.
+//  Description - 즐겨찾기 tableCell
+//  Created by 김재연 on 2021/04/15.
 //
 
 class FavoriteCell: UITableViewCell {

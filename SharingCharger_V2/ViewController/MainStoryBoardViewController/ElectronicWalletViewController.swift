@@ -28,6 +28,13 @@ class ElectronicWalletViewController : UIViewController {
     
     @objc func rightMenu(){
         print("우측 메뉴 클릭")
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchingPointHistoryCondition") else { return }
+        
+        let bottomSheet = Common.createHistorySearchCondition(rootViewController: self, sheetViewController : viewController)
+        present(bottomSheet, animated: true, completion: nil)
+        
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     @objc func pointBuy(sender : UIButton!){
         print("포인트 구매")
