@@ -12,10 +12,10 @@ import Foundation
 class ChargerSearchConditionViewController: UIViewController {
     
     @IBOutlet var totalTimeLabel: UILabel!
- 
+    
     @IBOutlet var instantCharge: UIButton!
     @IBOutlet var reservationCharge: UIButton!
- 
+    
     @IBOutlet var chargeStartTimeView: UIView!
     @IBOutlet var chargePeriodView: UIView!
     @IBOutlet var rangeView: UIView!
@@ -38,17 +38,17 @@ class ChargerSearchConditionViewController: UIViewController {
     
     private func activateView(active: Bool!) {
         
-     /*   switch active {
-            case true  :    datepickerView.isHidden = false
-                            datepickerView.visible()
-                            //startDatePicker.setDate(dateFormatter.date(from: startDateLabel.text!)! , animated: true)
-                            //endDatePicker.setDate(dateFormatter.date(from: endDateLabel.text!)! , animated: true)
-                            break
-            case false :    datepickerView.isHidden = true
-                            self.datepickerView.gone()
-                            break
-            default    :    break
-        }*/
+        /*   switch active {
+         case true  :    datepickerView.isHidden = false
+         datepickerView.visible()
+         //startDatePicker.setDate(dateFormatter.date(from: startDateLabel.text!)! , animated: true)
+         //endDatePicker.setDate(dateFormatter.date(from: endDateLabel.text!)! , animated: true)
+         break
+         case false :    datepickerView.isHidden = true
+         self.datepickerView.gone()
+         break
+         default    :    break
+         }*/
         UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
         
     }

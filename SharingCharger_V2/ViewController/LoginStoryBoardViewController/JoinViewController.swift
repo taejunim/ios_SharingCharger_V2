@@ -50,7 +50,7 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
         print("회원가입버튼")
         var code: Int! = 0
         
-        let url = "https://175.106.99.220:5000/user/v1/signup"
+        let url = "https://api.msac.co.kr/user/v1/signup"
         let parameters: Parameters = [
             /*"username": nameTextField.text!,
             "name": phoneNumberTextField.text!,

@@ -12,7 +12,7 @@
         <!--예약 진행-->
         <scene sceneID="hVP-3J-MbB">
             <objects>
-                <viewController storyboardIdentifier="Reservation" title="예약 진행" id="mtF-jw-j3I" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Reservation" title="예약 진행" id="mtF-jw-j3I" customClass="ReservationViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x2Y-S1-Mvj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,8 +81,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,254" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37X-AU-3f0">
-                                        <rect key="frame" x="303" y="199" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,254" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37X-AU-3f0">
+                                        <rect key="frame" x="278" y="199" width="70" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="wg0-1o-USC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -158,7 +161,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="37X-AU-3f0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h3y-v4-WBy" secondAttribute="trailing" constant="8" symbolic="YES" id="6Ua-Ls-B9L"/>
                                     <constraint firstItem="zFv-27-N7x" firstAttribute="trailing" secondItem="AaU-Nz-nWL" secondAttribute="trailing" id="Az7-Bf-BEa"/>
                                     <constraint firstItem="huE-Ds-Hov" firstAttribute="top" secondItem="h3y-v4-WBy" secondAttribute="bottom" constant="16" id="Cb5-Nx-lpc"/>
                                     <constraint firstAttribute="trailing" secondItem="xs7-lN-D5W" secondAttribute="trailing" id="D36-Ob-i9a"/>
@@ -218,10 +220,18 @@
                             <constraint firstItem="qjV-ED-GG2" firstAttribute="top" secondItem="ANX-7F-HbV" secondAttribute="bottom" id="xcw-5p-3Vj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chargerNameLabel" destination="rv8-6B-OHv" id="eor-dN-gS5"/>
+                        <outlet property="chargingPeriodLabel" destination="ATY-2u-Pkx" id="B3z-Z2-AKK"/>
+                        <outlet property="currentPointLabel" destination="zFv-27-N7x" id="Xox-Al-6e0"/>
+                        <outlet property="expectedPointLabel" destination="37X-AU-3f0" id="edm-W2-C8P"/>
+                        <outlet property="reservationButton" destination="h2f-aA-27d" id="PVX-Cl-ZUs"/>
+                        <outlet property="resultPointLabel" destination="pZX-va-zxz" id="5nW-7k-9AB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBk-El-zBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-895.6521739130435" y="-900"/>
+            <point key="canvasLocation" x="-896.92307692307691" y="-900"/>
         </scene>
         <!--Charger Search Condition View Controller-->
         <scene sceneID="0yh-XF-ySx">
@@ -929,6 +939,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chargeEnd" destination="bY4-Uk-ayh" id="sLQ-yi-y7b"/>
+                        <outlet property="chargeStart" destination="KFe-Lq-gEG" id="EmX-ay-Gch"/>
+                        <outlet property="searchCharger" destination="DbP-xs-kWf" id="WhA-3U-nu8"/>
                         <outlet property="tableView" destination="j2H-oU-dis" id="JJw-l2-aYl"/>
                     </connections>
                 </viewController>
@@ -1194,7 +1207,11 @@
                         <outlet property="callCenterButton" destination="Th5-6M-vUS" id="ckd-yV-t6U"/>
                         <outlet property="chargerUseHistoryButton" destination="CWm-yS-fRE" id="UNT-eD-IUw"/>
                         <outlet property="electronicWalletButton" destination="DTb-Er-jgd" id="5tq-zN-SvP"/>
+                        <outlet property="emailLabel" destination="XUe-mW-HwJ" id="KSn-Pl-Ilt"/>
                         <outlet property="favoriteButton" destination="aE6-eu-taV" id="fB2-aR-uWW"/>
+                        <outlet property="nameLabel" destination="cyP-Fh-yzy" id="haS-Qm-GOo"/>
+                        <outlet property="pointLabel" destination="he6-f5-NTg" id="pGx-WT-I0N"/>
+                        <outlet property="reservationStateLabel" destination="XHC-A4-sfo" id="WlC-Y2-cYz"/>
                         <outlet property="userCertificationButton" destination="39M-PL-bKZ" id="wGT-7T-2TJ"/>
                     </connections>
                 </viewController>
@@ -1308,7 +1325,7 @@
                                 </state>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxW-e9-eBb">
-                                <rect key="frame" x="0.0" y="51" width="390" height="759"/>
+                                <rect key="frame" x="0.0" y="51" width="390" height="719"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkH-eY-aRB">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="258"/>
@@ -1415,17 +1432,24 @@
                             <constraint firstItem="cxW-e9-eBb" firstAttribute="top" secondItem="sJP-SS-Eg2" secondAttribute="bottom" id="AgG-dy-paB"/>
                             <constraint firstItem="cxW-e9-eBb" firstAttribute="leading" secondItem="SYd-Za-uAf" secondAttribute="leading" id="GRS-5t-L8t"/>
                             <constraint firstItem="cxW-e9-eBb" firstAttribute="trailing" secondItem="SYd-Za-uAf" secondAttribute="trailing" id="K9v-Pz-PPG"/>
-                            <constraint firstItem="SYd-Za-uAf" firstAttribute="bottom" secondItem="cxW-e9-eBb" secondAttribute="bottom" id="TCQ-b3-9tD"/>
+                            <constraint firstItem="SYd-Za-uAf" firstAttribute="bottom" secondItem="cxW-e9-eBb" secondAttribute="bottom" constant="40" id="TCQ-b3-9tD"/>
                             <constraint firstItem="sJP-SS-Eg2" firstAttribute="top" secondItem="SYd-Za-uAf" secondAttribute="top" id="Wgc-7n-nhi"/>
                             <constraint firstItem="sJP-SS-Eg2" firstAttribute="trailing" secondItem="SYd-Za-uAf" secondAttribute="trailing" id="Zuk-re-oi7"/>
                             <constraint firstItem="sJP-SS-Eg2" firstAttribute="leading" secondItem="SYd-Za-uAf" secondAttribute="leading" id="sfq-7a-Rsh"/>
                             <constraint firstItem="AIw-M6-3gY" firstAttribute="bottom" secondItem="SYd-Za-uAf" secondAttribute="bottom" id="xNA-5f-0wO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentPasswordTextField" destination="28a-cA-FCH" id="6tZ-wj-Mec"/>
+                        <outlet property="passwordChangeCompleteButton" destination="AIw-M6-3gY" id="JhL-ep-buh"/>
+                        <outlet property="passwordConfirmTextField" destination="rKV-cJ-bwS" id="NGb-fg-LCM"/>
+                        <outlet property="passwordTextField" destination="DbL-1h-zKZ" id="J5C-8o-gco"/>
+                        <outlet property="scrollView" destination="cxW-e9-eBb" id="kbx-bf-ko7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajE-FA-XZT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="491"/>
+            <point key="canvasLocation" x="1521.5384615384614" y="490.521327014218"/>
         </scene>
         <!--충전 이력-->
         <scene sceneID="yVF-tY-9NE">
@@ -1538,7 +1562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn5-YX-c7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91.304347826086968" y="1195.9821428571429"/>
+            <point key="canvasLocation" x="-92" y="1201"/>
         </scene>
         <!--Charger Use History Search Condition View Controller-->
         <scene sceneID="DRk-W3-aag">
@@ -2306,6 +2330,7 @@
                         <outlet property="plusView" destination="tVI-XO-e49" id="cvR-9U-dha"/>
                         <outlet property="pointBuyButton" destination="49K-c1-gGc" id="k7o-Ju-God"/>
                         <outlet property="pointHistoryButton" destination="dug-Fv-THh" id="Mex-6z-keH"/>
+                        <outlet property="pointLabel" destination="cAT-gT-mrE" id="UQx-ds-kFj"/>
                         <outlet property="transferButton" destination="QA9-KB-H9F" id="vZN-wy-JPa"/>
                         <outlet property="walletView" destination="ocL-RM-7oI" id="DWx-MI-lhI"/>
                     </connections>
@@ -2421,7 +2446,7 @@
         <!--회원 증명서-->
         <scene sceneID="yaB-GH-3Br">
             <objects>
-                <viewController storyboardIdentifier="UserCertification" title="회원 증명서" id="WMY-Bb-Lcb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserCertification" title="회원 증명서" id="WMY-Bb-Lcb" customClass="UserCertificationViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jj1-tT-wk8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2446,7 +2471,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-F9-aQA">
-                                <rect key="frame" x="25" y="111" width="340" height="365"/>
+                                <rect key="frame" x="25" y="111" width="340" height="355"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-aL-Sdc">
                                         <rect key="frame" x="30" y="35" width="300" height="24"/>
@@ -2490,7 +2515,7 @@
                                     <constraint firstItem="2PA-HE-9eM" firstAttribute="centerX" secondItem="5Sq-F9-aQA" secondAttribute="centerX" id="PnI-kM-5xw"/>
                                     <constraint firstAttribute="trailing" secondItem="Afx-aL-Sdc" secondAttribute="trailing" constant="10" id="QRJ-IY-fyL"/>
                                     <constraint firstItem="zKJ-gn-GfB" firstAttribute="leading" secondItem="Afx-aL-Sdc" secondAttribute="leading" id="UoN-GD-0jo"/>
-                                    <constraint firstAttribute="bottom" secondItem="2PA-HE-9eM" secondAttribute="bottom" constant="10" id="XGX-EC-oEl"/>
+                                    <constraint firstAttribute="bottom" secondItem="2PA-HE-9eM" secondAttribute="bottom" id="XGX-EC-oEl"/>
                                     <constraint firstItem="zKJ-gn-GfB" firstAttribute="trailing" secondItem="Afx-aL-Sdc" secondAttribute="trailing" id="riE-SK-ibO"/>
                                     <constraint firstItem="ftN-Cs-dH6" firstAttribute="leading" secondItem="5Sq-F9-aQA" secondAttribute="leading" constant="42" id="ryL-mV-lvP"/>
                                     <constraint firstItem="Afx-aL-Sdc" firstAttribute="top" secondItem="5Sq-F9-aQA" secondAttribute="top" constant="35" id="yD9-Oe-x7S"/>
@@ -2511,6 +2536,11 @@
                             <constraint firstItem="bge-vD-YW2" firstAttribute="trailing" secondItem="5Sq-F9-aQA" secondAttribute="trailing" constant="25" id="u6b-BF-GtV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="renewalButton" destination="2PA-HE-9eM" id="1wY-y4-2mr"/>
+                        <outlet property="userCertification" destination="ftN-Cs-dH6" id="UxT-0P-7Qn"/>
+                        <outlet property="withdrawal" destination="AVu-Mm-epB" id="vdD-r5-Dj2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWz-KW-VWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2542,32 +2572,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-GQ-dOi">
                                 <rect key="frame" x="0.0" y="51" width="390" height="118"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRp-BR-wS2">
-                                        <rect key="frame" x="259" y="33" width="107" height="37"/>
-                                        <color key="backgroundColor" name="Color_3498DB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="yC7-qi-Qpq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="50,000p">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 잔여 포인트 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-0k-ZFY">
-                                        <rect key="frame" x="32" y="33" width="167.33333333333334" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="현재 잔여 포인트 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-0k-ZFY">
+                                        <rect key="frame" x="32" y="33" width="167.66666666666666" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="50,000p" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob9-OJ-3sK">
+                                        <rect key="frame" x="276" y="32" width="84" height="36"/>
+                                        <color key="backgroundColor" name="Color_3498DB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="Ihy-Wf-ywd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4P3-0k-ZFY" firstAttribute="leading" secondItem="0cN-GQ-dOi" secondAttribute="leading" constant="32" id="0ux-nM-OIs"/>
-                                    <constraint firstAttribute="trailing" secondItem="gRp-BR-wS2" secondAttribute="trailing" constant="24" id="1qN-Rp-zcf"/>
-                                    <constraint firstAttribute="bottom" secondItem="gRp-BR-wS2" secondAttribute="bottom" constant="48" id="5FI-Ja-ylS"/>
-                                    <constraint firstItem="gRp-BR-wS2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4P3-0k-ZFY" secondAttribute="trailing" constant="8" symbolic="YES" id="8bq-KI-PtO"/>
-                                    <constraint firstItem="gRp-BR-wS2" firstAttribute="top" secondItem="4P3-0k-ZFY" secondAttribute="top" id="DZj-8I-aY1"/>
-                                    <constraint firstItem="gRp-BR-wS2" firstAttribute="top" secondItem="0cN-GQ-dOi" secondAttribute="top" constant="33" id="gbt-3n-BLd"/>
+                                    <constraint firstItem="4P3-0k-ZFY" firstAttribute="top" secondItem="0cN-GQ-dOi" secondAttribute="top" constant="33" id="1Qi-EX-TIp"/>
+                                    <constraint firstItem="Ob9-OJ-3sK" firstAttribute="top" secondItem="0cN-GQ-dOi" secondAttribute="top" constant="32" id="81u-wx-gOg"/>
+                                    <constraint firstAttribute="bottom" secondItem="4P3-0k-ZFY" secondAttribute="bottom" constant="55" id="JsA-g7-W9N"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ob9-OJ-3sK" secondAttribute="bottom" constant="50" id="Qah-R0-Me0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ob9-OJ-3sK" secondAttribute="trailing" constant="30" id="sgD-sd-qm2"/>
                                     <constraint firstAttribute="height" constant="118" id="wv6-mM-cYZ"/>
                                 </constraints>
                             </view>
@@ -2657,6 +2686,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pointLabel" destination="Ob9-OJ-3sK" id="YfM-h5-6f5"/>
                         <outlet property="tableView" destination="lu5-bx-60t" id="cdp-V7-Ard"/>
                     </connections>
                 </viewController>

@@ -8,16 +8,23 @@ import UIKit
 import CoreLocation
 import SideMenu
 import MaterialComponents.MaterialBottomSheet
+import Alamofire
 
 class MainViewController: UIViewController, MTMapViewDelegate {
-
+    
     @IBOutlet weak var mapView: UIView!
+    
+    var utils: Utils?                                           //로딩뷰
+    var activityIndicator: UIActivityIndicatorView?             //로딩뷰
+    
     var mTMapView: MTMapView?
     
     let addressView = ShadowButton(type: .system)
     
+    //    var selectedChargerObject: ChargerObject?
+    
     let locationManager = CLLocationManager()
-
+    
     var searchingConditionView = ShadowView()
     //var chargerView: BottomSheetView?
     var bottomButton = CustomButton(type: .system)
@@ -28,7 +35,51 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         super.viewDidLoad()
         viewWillInitializeObjects()
     }
-
+    
+    //충전기 목록 가져오기
+    private func getPoint() {
+        var code: Int! = 0
+        
+        //        let chargerId = poiItem.tag
+        let url = "https://api.msac.co.kr/shared-charger/v1"
+        
+        AF.request(url, method: .get, encoding: URLEncoding.default, interceptor: Interceptor(indicator: activityIndicator!)).validate().responseJSON(completionHandler: { response in
+            
+            code = response.response?.statusCode
+            
+            switch response.result {
+            
+            case .success(let obj):
+                print(obj)
+            //                do {
+            //
+            //                    let JSONData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+            //                    let instanceData = try JSONDecoder().decode(ChargerObject.self, from: JSONData)
+            //
+            //                    self.selectedChargerObject = instanceData
+            //
+            //                } catch {
+            //                    print("error : \(error.localizedDescription)")
+            //                    print("서버와 통신이 원활하지 않습니다.\n문제가 지속될 시 고객센터로 문의주십시오. code : \(code!)")
+            //                    self.view.makeToast("서버와 통신이 원활하지 않습니다.\n문제가 지속될 시 고객센터로 문의주십시오. code : \(code!)", duration: 2.0, position: .bottom)
+            //                }
+            
+            case .failure(let err):
+                
+                print("error is \(String(describing: err))")
+                
+                if code == 400 {
+                    print("400 Error.")
+                    self.view.makeToast("서버와 통신이 원활하지 않습니다.\n문제가 지속될 시 고객센터로 문의주십시오. code : \(code!)", duration: 2.0, position: .bottom)
+                    
+                } else {
+                    print("Unknown Error")
+                    self.view.makeToast("서버와 통신이 원활하지 않습니다.\n문제가 지속될 시 고객센터로 문의주십시오. code : 알 수 없는 오류", duration: 2.0, position: .bottom)
+                }
+            }
+        })
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         
         Common.showNavigationController(navigationController : self.navigationController , show : true)
@@ -57,7 +108,7 @@ class MainViewController: UIViewController, MTMapViewDelegate {
             mTMapView?.setMapCenter(MTMapPoint(geoCoord: DEFAULT_POSITION), zoomLevel: 1, animated: true)
         }
     }
-
+    
     private func viewWillInitializeObjects(){
         
         //지도 설정
@@ -74,7 +125,7 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         addButton(buttonName: "currentLocation", width: 40, height: 40, top: 70, left: nil, right: -15, bottom: nil, target: mapView)    //현재 위치 버튼
         addSearchingConditionView(width: nil, height: 110, top: nil, left: 15, right: -15, bottom: 0, target: mapView)  //검색 조건 버튼
     }
-   
+    
     //사이드메뉴, 주소 찾기 버튼 추가
     private func addButton(buttonName: String?, width: CGFloat?, height: CGFloat?, top: CGFloat?, left: CGFloat?, right: CGFloat?, bottom: CGFloat?, target: AnyObject) {
         
@@ -93,11 +144,11 @@ class MainViewController: UIViewController, MTMapViewDelegate {
                 button.isCircle = false
             }
             mapView?.addSubview(button)
-        
+            
             button.setAttributes(buttonName: buttonName, width: width, height: height, top: top, left: left, right: right, bottom: bottom, target: target)
         }
     }
-   
+    
     //충전 버튼, 예약 버튼 추가
     private func addBottomButton(buttonName: String?, width: CGFloat?, height: CGFloat?, top: CGFloat?, left: CGFloat?, right: CGFloat?, bottom: CGFloat?, target: AnyObject, targetViewController: AnyObject) {
         
@@ -134,29 +185,29 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         
         //현재 예약 가져오는 api 나오면 분기처리
         /*let reservationId = myUserDefaults.integer(forKey: "reservationId")
-        
-        //예약이 있을 경우 예약 팝업
-        if reservationId > 0 {
-            
-            presentReservationPopup()
-        }
-        */
+         
+         //예약이 있을 경우 예약 팝업
+         if reservationId > 0 {
+         
+         presentReservationPopup()
+         }
+         */
         //예약이 없으면 검색 조건 팝업
         //else {
-            
-            let viewController: UIViewController!
-            let bottomSheet: MDCBottomSheetController!
-            
-            viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChargerSearchCondition")
-            bottomSheet = MDCBottomSheetController(contentViewController: viewController)
-            bottomSheet.preferredContentSize = CGSize(width: mapView.frame.size.width, height: mapView.frame.size.height)
-            
-            let shapeGenerator = MDCCurvedRectShapeGenerator(cornerSize: CGSize(width: 15, height: 15))
-            bottomSheet.setShapeGenerator(shapeGenerator, for: .preferred)
-            bottomSheet.setShapeGenerator(shapeGenerator, for: .extended)
-            bottomSheet.setShapeGenerator(shapeGenerator, for: .closed)
-            
-            present(bottomSheet, animated: true, completion: nil)
+        
+        let viewController: UIViewController!
+        let bottomSheet: MDCBottomSheetController!
+        
+        viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChargerSearchCondition")
+        bottomSheet = MDCBottomSheetController(contentViewController: viewController)
+        bottomSheet.preferredContentSize = CGSize(width: mapView.frame.size.width, height: mapView.frame.size.height)
+        
+        let shapeGenerator = MDCCurvedRectShapeGenerator(cornerSize: CGSize(width: 15, height: 15))
+        bottomSheet.setShapeGenerator(shapeGenerator, for: .preferred)
+        bottomSheet.setShapeGenerator(shapeGenerator, for: .extended)
+        bottomSheet.setShapeGenerator(shapeGenerator, for: .closed)
+        
+        present(bottomSheet, animated: true, completion: nil)
         //}
     }
     //위치 권한 체크
@@ -187,32 +238,32 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         if segue.identifier == "segueToAddress" {
             print("좌표 넘기기 예제")
             /*if let searchingAddressViewController = segue.destination as? AddressViewController {
-                
-                if let userLatitude = locationManager.location?.coordinate.latitude , let userLongitude = locationManager.location?.coordinate.longitude{
-                
-                    searchingAddressViewController.userLatitude = userLatitude
-                    searchingAddressViewController.userLongitude = userLongitude
-                }
-                if let mapLatitude = mTMapView?.mapCenterPoint.mapPointGeo().latitude , let mapLongitude = mTMapView?.mapCenterPoint.mapPointGeo().longitude{
-                    
-                    searchingAddressViewController.mapLatitude = mapLatitude
-                    searchingAddressViewController.mapLongitude = mapLongitude
-                    
-                }
-
-                searchingAddressViewController.defaultAddress = (self.addressView.titleLabel?.text)!
-                searchingAddressViewController.delegate       = self
-            }*/
+             
+             if let userLatitude = locationManager.location?.coordinate.latitude , let userLongitude = locationManager.location?.coordinate.longitude{
+             
+             searchingAddressViewController.userLatitude = userLatitude
+             searchingAddressViewController.userLongitude = userLongitude
+             }
+             if let mapLatitude = mTMapView?.mapCenterPoint.mapPointGeo().latitude , let mapLongitude = mTMapView?.mapCenterPoint.mapPointGeo().longitude{
+             
+             searchingAddressViewController.mapLatitude = mapLatitude
+             searchingAddressViewController.mapLongitude = mapLongitude
+             
+             }
+             
+             searchingAddressViewController.defaultAddress = (self.addressView.titleLabel?.text)!
+             searchingAddressViewController.delegate       = self
+             }*/
         }
     }
     //현재 위치 버튼
     @objc func currentLocationTrackingModeButton(sender: UIView!) {
         print("현재위치")
-       /* if let latitude = locationManager.location?.coordinate.latitude , let longitude = locationManager.location?.coordinate.longitude{
-            
-            receivedSearchingConditionObject.gpxY = latitude
-            receivedSearchingConditionObject.gpxX = longitude
-        }*/
+        /* if let latitude = locationManager.location?.coordinate.latitude , let longitude = locationManager.location?.coordinate.longitude{
+         
+         receivedSearchingConditionObject.gpxY = latitude
+         receivedSearchingConditionObject.gpxX = longitude
+         }*/
     }
     private func selectedPresentationStyle() -> SideMenuPresentationStyle {
         return .menuSlideIn

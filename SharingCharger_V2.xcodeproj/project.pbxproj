@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E36D0A0262EA4BE00EBA590 /* ChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */; };
 		0E36D0A3262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0A2262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift */; };
+		0E36D0FB263258EA00EBA590 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */; };
+		0E36D0FE2632972A00EBA590 /* UserCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */; };
 		0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6215F62626B09800585932 /* PasswordInitViewController.swift */; };
 		0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */; };
 		0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */; };
@@ -80,6 +82,8 @@
 /* Begin PBXFileReference section */
 		0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeViewController.swift; sourceTree = "<group>"; };
 		0E36D0A2262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingPointHistoryConditionViewController.swift; sourceTree = "<group>"; };
+		0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationViewController.swift; sourceTree = "<group>"; };
 		0E6215F62626B09800585932 /* PasswordInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInitViewController.swift; sourceTree = "<group>"; };
 		0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInitCompleteViewController.swift; sourceTree = "<group>"; };
 		0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPointTableCell.swift; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 				0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */,
 				0E36D0A2262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift */,
 				C65DA036263027D4005179C4 /* ChargerSearchConditionViewController.swift */,
+				0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */,
+				0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */,
 			);
 			path = MainStoryBoardViewController;
 			sourceTree = "<group>";
@@ -526,6 +532,8 @@
 				0E815CE92626CFE0001FFD11 /* SettingViewController.swift in Sources */,
 				0E6A1BDD262963CB007C476C /* HistoryPointViewController.swift in Sources */,
 				0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */,
+				0E36D0FE2632972A00EBA590 /* UserCertificationViewController.swift in Sources */,
+				0E36D0FB263258EA00EBA590 /* ReservationViewController.swift in Sources */,
 				C630618F26295BFF00A5D22F /* CustomButton.swift in Sources */,
 				C660910A261C4A39005F2518 /* Common.swift in Sources */,
 				0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */,
@@ -694,7 +702,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = SW97KU77ZP;
+				DEVELOPMENT_TEAM = BF9CP282RW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharingCharger_V2/Library/DaumMap.embeddedframework",
@@ -705,7 +713,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "krco.metisinfo.SharingCharger-V2";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.metisinfo.SharingCharger-V2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = SharingCharger_V2/KakaoMapBridgingHeader.h;
@@ -725,7 +733,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = SW97KU77ZP;
+				DEVELOPMENT_TEAM = BF9CP282RW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharingCharger_V2/Library/DaumMap.embeddedframework",
@@ -736,7 +744,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "krco.metisinfo.SharingCharger-V2";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.metisinfo.SharingCharger-V2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = SharingCharger_V2/KakaoMapBridgingHeader.h;

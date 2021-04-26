@@ -8,7 +8,7 @@
 import Foundation
 
 class SearchingPointHistoryConditionViewController : UIViewController {
- 
+    
     @IBOutlet var oneMonth: UIButton!
     @IBOutlet var threeMonth: UIButton!
     @IBOutlet var sixMonth: UIButton!
@@ -88,7 +88,7 @@ class SearchingPointHistoryConditionViewController : UIViewController {
     }
     
     @IBAction func setPeriodButton(_ sender: UIButton) {
-    
+        
         for index in 0...3 {
             if(index == periodButtonArray.firstIndex(of: sender)){
                 Common.setButton(button: periodButtonArray[index], able: true, color: Color3498DB, radius: 0, action: nil, target: self)
@@ -107,7 +107,7 @@ class SearchingPointHistoryConditionViewController : UIViewController {
     }
     
     @IBAction func setTypeButton(_ sender: UIButton) {
-    
+        
         for index in 0...3 {
             if(index == typeButtonArray.firstIndex(of: sender)){
                 Common.setButton(button: typeButtonArray[index], able: true, color: Color3498DB, radius: 0, action: nil, target: self)
@@ -128,18 +128,18 @@ class SearchingPointHistoryConditionViewController : UIViewController {
         
         for index in 0...1 {
             if(index == sortButtonArray.firstIndex(of: sender)){
-            
+                
                 Common.setButton(button: sortButtonArray[index], able: true, color: Color3498DB, radius: 0, action: nil, target: self)
                 Common.setButtonBorder(button: sortButtonArray[index], borderWidth: buttonBorderWidth, borderColor: Color3498DB)
                 sortButtonArray[index].setTitleColor(ColorWhite, for: .normal)
                 //selectedSort = index
-            
+                
             } else{
-
+                
                 Common.setButton(button: sortButtonArray[index], able: true, color: ColorWhite, radius: 0, action: nil, target: self)
                 Common.setButtonBorder(button: sortButtonArray[index], borderWidth: buttonBorderWidth, borderColor: ColorE0E0E0)
                 sortButtonArray[index].setTitleColor(ColorE0E0E0, for: .normal)
-            
+                
             }
         }
         
@@ -148,15 +148,15 @@ class SearchingPointHistoryConditionViewController : UIViewController {
     private func activateView(active: Bool!) {
         
         switch active {
-            case true  :    datepickerView.isHidden = false
-                            datepickerView.visible()
-                            //startDatePicker.setDate(dateFormatter.date(from: startDateLabel.text!)! , animated: true)
-                            //endDatePicker.setDate(dateFormatter.date(from: endDateLabel.text!)! , animated: true)
-                            break
-            case false :    datepickerView.isHidden = true
-                            self.datepickerView.gone()
-                            break
-            default    :    break
+        case true  :    datepickerView.isHidden = false
+            datepickerView.visible()
+            //startDatePicker.setDate(dateFormatter.date(from: startDateLabel.text!)! , animated: true)
+            //endDatePicker.setDate(dateFormatter.date(from: endDateLabel.text!)! , animated: true)
+            break
+        case false :    datepickerView.isHidden = true
+            self.datepickerView.gone()
+            break
+        default    :    break
         }
         UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
         
@@ -168,22 +168,22 @@ class SearchingPointHistoryConditionViewController : UIViewController {
         }else{
             activateView(active: false)
             /*switch range {
-                case oneMonth:
-                    startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -1, to: date)!)
-                                  break
-                case threeMonth:
-                    startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -3, to: date)!)
-                                  break
-                case sixMonth:
-                    startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -6, to: date)!)
-                                  break
-                default:
-                                  break
-            }
-            endDate             = dateFormatter.string(from: date)
-
-            startDateLabel.text = startDate
-            endDateLabel.text   = endDate*/
+             case oneMonth:
+             startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -1, to: date)!)
+             break
+             case threeMonth:
+             startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -3, to: date)!)
+             break
+             case sixMonth:
+             startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -6, to: date)!)
+             break
+             default:
+             break
+             }
+             endDate             = dateFormatter.string(from: date)
+             
+             startDateLabel.text = startDate
+             endDateLabel.text   = endDate*/
         }
     }
     @objc func refreshButton(sender: UIButton!) {

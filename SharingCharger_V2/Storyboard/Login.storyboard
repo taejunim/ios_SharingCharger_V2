@@ -312,6 +312,9 @@
                             <constraint firstItem="ETA-vs-xAi" firstAttribute="leading" secondItem="YtP-Ef-8Ky" secondAttribute="leading" id="xxl-Sg-4MY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordInitCompleteButton" destination="ETA-vs-xAi" id="Uc0-jM-beF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeB-Gl-5OV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

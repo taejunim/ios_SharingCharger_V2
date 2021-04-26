@@ -1,15 +1,19 @@
 //
-//  PasswordInitCompleteViewController.swift
+//  UserCertificationViewController.swift
 //  SharingCharger_V2
-//  Description - 비밀번호 변경2 화면 ViewController
-//  Created by 김재연 on 2021/04/14.
 //
+//  Created by guava on 2021/04/23.
+//
+
 import UIKit
 import Alamofire
+import Toast_Swift
 
-class PasswordInitCompleteViewController: UIViewController, UITextFieldDelegate {
+class UserCertificationViewController : UIViewController{
     
-    @IBOutlet var passwordInitCompleteButton: UIButton!
+    @IBOutlet var userCertification: UIView!
+    @IBOutlet var renewalButton: UIButton!
+    @IBOutlet var withdrawal: UIButton!
     
     var utils: Utils?                                           //로딩뷰
     var activityIndicator: UIActivityIndicatorView?             //로딩뷰
@@ -19,9 +23,9 @@ class PasswordInitCompleteViewController: UIViewController, UITextFieldDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("PasswordInitCompleteViewController - viewDidLoad")
+        print("UserCertificationViewController - viewDidLoad")
         
-        Common.setButton(button: passwordInitCompleteButton, able: true, color: ColorE0E0E0, radius: 7, action: #selector(passwordChangeButton), target : self)
+        Common.setButton(button: withdrawal, able: true, color: ColorE0E0E0, radius: 7, action: #selector(withdrawalButton), target : self)
         
         //로딩 뷰
         utils = Utils(superView: self.view)
@@ -30,18 +34,19 @@ class PasswordInitCompleteViewController: UIViewController, UITextFieldDelegate 
         self.activityIndicator!.hidesWhenStopped = true
         
     }
-    //비밀번호 변경 완료 버튼
-    @objc func passwordChangeButton(sender: UIButton!) {
-        print("비밀번호 변경 완료 버튼")
+    
+    //회원탈퇴 버튼
+    @objc func withdrawalButton(sender: UIButton!) {
+        print("회원 탈퇴 버튼")
         var code: Int! = 0
         
-        let url = "https://api.msac.co.kr/user/v1/password"
+        let url = "https://api.msac.co.kr/user/v1/withdrawal"
         let parameters: Parameters = [
-            "currentpasswword": "123456",
-            "newpassword": "654321"
+            "loginid": "Kim",
+            "phonenumber": "9370057468"
         ]
         
-        AF.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, interceptor: Interceptor(indicator: activityIndicator!)).validate().responseJSON(completionHandler: { response in
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, interceptor: Interceptor(indicator: activityIndicator!)).validate().responseJSON(completionHandler: { response in
             
             code = response.response?.statusCode
             
@@ -78,8 +83,8 @@ class PasswordInitCompleteViewController: UIViewController, UITextFieldDelegate 
                 print("error is \(String(describing: err))")
                 
                 if code == 400 {
-                    print("중복된 이메일이 존재합니다. 다른 이메일로 가입하여 주십시오.")
-                    self.view.makeToast("중복된 이메일이 존재합니다.\n다른 이메일로 가입하여 주십시오.", duration: 2.0, position: .bottom)
+                    //                    print("중복된 이메일이 존재합니다. 다른 이메일로 가입하여 주십시오.")
+                    //                    self.view.makeToast("중복된 이메일이 존재합니다.\n다른 이메일로 가입하여 주십시오.", duration: 2.0, position: .bottom)
                     
                 } else {
                     if(code != nil){
