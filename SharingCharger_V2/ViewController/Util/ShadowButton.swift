@@ -61,6 +61,7 @@ class ShadowButton: UIButton {
             
             self.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(18))
             self.setTitle("", for: .normal)
+            self.tintColor = UIColor.black
             self.addTarget(MainViewController(), action: #selector(MainViewController.addressButton), for: .touchUpInside)
 
             break

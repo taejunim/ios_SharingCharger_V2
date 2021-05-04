@@ -10,9 +10,12 @@ import SideMenu
 import MaterialComponents.MaterialBottomSheet
 import Alamofire
 
-class MainViewController: UIViewController, MTMapViewDelegate {
+class MainViewController: UIViewController, MTMapViewDelegate, AddressProtocol {
+    
     
     @IBOutlet weak var mapView: UIView!
+    
+    let notificationCenter = NotificationCenter.default
     
     var utils: Utils?                                           //로딩뷰
     var activityIndicator: UIActivityIndicatorView?             //로딩뷰
@@ -20,15 +23,18 @@ class MainViewController: UIViewController, MTMapViewDelegate {
     var mTMapView: MTMapView?
     
     let addressView = ShadowButton(type: .system)
+    var labelChange = true
     
-    //    var selectedChargerObject: ChargerObject?
+    var selectedAddressObject: SelectedPositionObject? = nil
     
     let locationManager = CLLocationManager()
+    let geoCoder = CLGeocoder()
     
     var searchingConditionView = ShadowView()
     //var chargerView: BottomSheetView?
     var bottomButton = CustomButton(type: .system)
     
+    var isCurrentLocationTrackingMode = false
     
     override func viewDidLoad() {
         print("MainViewController - viewDidLoad")
@@ -37,7 +43,7 @@ class MainViewController: UIViewController, MTMapViewDelegate {
     }
     
     //충전기 목록 가져오기
-    private func getPoint() {
+    private func getChargerList() {
         var code: Int! = 0
         
         //        let chargerId = poiItem.tag
@@ -90,11 +96,7 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         Common.showNavigationController(navigationController : self.navigationController , show : false)
         super.viewWillAppear(animated)
         
-        //위치 권한이 없으면 위치 권한 메시지 띄움
-        if !hasLocationPermission() {
-            print("권한없음")
-            self.locationManager.requestAlwaysAuthorization()
-        }
+        //view가 나타나기 전에 여기서 메모리 (myUserDefaults)에 저장되있는 예약 정보가 있다면 예약 팝업
     }
     
     //view가 나타난 후
@@ -111,6 +113,9 @@ class MainViewController: UIViewController, MTMapViewDelegate {
     
     private func viewWillInitializeObjects(){
         
+        //위치 권한
+        requestGPSPermission()
+        
         //지도 설정
         mTMapView = MTMapView(frame: mapView.bounds)
         if let mTMapView = mTMapView {
@@ -124,6 +129,9 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         addBottomButton(buttonName: "bottomButton", width: nil, height: 40, top: nil, left: 0, right: 0, bottom: 0, target: self.view, targetViewController: self)  //하단 버튼
         addButton(buttonName: "currentLocation", width: 40, height: 40, top: 70, left: nil, right: -15, bottom: nil, target: mapView)    //현재 위치 버튼
         addSearchingConditionView(width: nil, height: 110, top: nil, left: 15, right: -15, bottom: 0, target: mapView)  //검색 조건 버튼
+        
+        //delegate 에서 observer (다른 화면에서 메인화면으로 돌아왔을때 이벤트(searchingAddress) 등록)
+        notificationCenter.addObserver(self, selector: #selector(searchingAddress(_:)), name: .searchAddress, object: nil)
     }
     
     //사이드메뉴, 주소 찾기 버튼 추가
@@ -237,7 +245,7 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         
         if segue.identifier == "segueToAddress" {
             print("좌표 넘기기 예제")
-            /*if let searchingAddressViewController = segue.destination as? AddressViewController {
+            if let searchingAddressViewController = segue.destination as? AddressViewController {
              
              if let userLatitude = locationManager.location?.coordinate.latitude , let userLongitude = locationManager.location?.coordinate.longitude{
              
@@ -251,20 +259,139 @@ class MainViewController: UIViewController, MTMapViewDelegate {
              
              }
              
+             //현재 주소를 주소 검색창으로 넘김
              searchingAddressViewController.defaultAddress = (self.addressView.titleLabel?.text)!
              searchingAddressViewController.delegate       = self
-             }*/
+             }
         }
     }
+    
+    func addressDelegate(data: SelectedPositionObject ) {
+        notificationCenter.post(name: .searchAddress, object: data, userInfo: nil)
+    }
+    
+    //지도 클릭했을 때
+    func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
+        
+        print("singleTapOn ")
+        
+        //showSearchingConditionView()
+        
+        //selectedChargerObject = nil
+    }
+    
+    //지도 드래그가 끝났을때
+    func mapView(_ mapView: MTMapView!, dragEndedOn mapPoint: MTMapPoint!) {
+        print("dragEndedOn")
+    
+        //선택된 충전기가 있으면 충전기 정보를 보여주는 식으로...
+        /*if selectedChargerObject != nil {
+           
+            showSearchingConditionView()
+            selectedChargerObject = nil
+        }*/
+        
+    }
+    
+    //지도 움직임 끝났을때
+    func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
+        print("finishedMapMoveAnimation \(mapCenterPoint.mapPointGeo())")
+        
+        changeAddressButtonText(latitude: mapCenterPoint.mapPointGeo().latitude, longitude: mapCenterPoint.mapPointGeo().longitude, placeName: nil)
+        labelChange = true
+        
+        //여기서 새로 충전기 조회 api 를 호출
+    }
+    
+    //지도 중심점 변경
+    func moveMapView(mapPoint : MTMapPoint){
+        
+        mTMapView?.setMapCenter( mapPoint, zoomLevel: 1, animated: true)
+    
+    }
+    
+    //위치 권한 요청
+    private func requestGPSPermission() {
+            
+        if !hasLocationPermission() {
+            let alertController = UIAlertController(title: "위치 권한이 요구됨", message: "내 위치 확인을 위해 권한이 필요합니다.", preferredStyle: UIAlertController.Style.alert)
+
+            let okAction = UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
+                //Redirect to Settings app
+                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+            })
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+            alertController.addAction(cancelAction)
+
+            alertController.addAction(okAction)
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     //현재 위치 버튼
     @objc func currentLocationTrackingModeButton(sender: UIView!) {
-        print("현재위치")
-        /* if let latitude = locationManager.location?.coordinate.latitude , let longitude = locationManager.location?.coordinate.longitude{
-         
-         receivedSearchingConditionObject.gpxY = latitude
-         receivedSearchingConditionObject.gpxX = longitude
-         }*/
+        print("현재위치 벼튼")
+        if hasLocationPermission() {
+            
+            if isCurrentLocationTrackingMode {
+                
+                mTMapView?.showCurrentLocationMarker = false
+                mTMapView?.currentLocationTrackingMode = .off
+                isCurrentLocationTrackingMode = false
+                
+            } else {
+
+                mTMapView?.showCurrentLocationMarker = true
+                mTMapView?.currentLocationTrackingMode = .onWithoutHeading
+                isCurrentLocationTrackingMode = true
+            }
+        } else {
+            requestGPSPermission()
+        }
     }
+    
+    //검색 조건 화면 -> 메인화면 돌아왔을때
+    @objc func searchingAddress(_ notification: Notification) {
+
+        selectedAddressObject = notification.object as? SelectedPositionObject
+       
+        if let latitude = selectedAddressObject?.latitude , let longitude = selectedAddressObject?.longitude {
+
+            let selectedAddress = MTMapPoint(geoCoord: MTMapPointGeo(latitude: latitude, longitude: longitude))
+            moveMapView(mapPoint: selectedAddress!)
+        }
+        
+        labelChange = false
+        changeAddressButtonText(latitude: nil, longitude: nil, placeName: selectedAddressObject?.place_name)
+        
+    }
+    func changeAddressButtonText(latitude : Double?, longitude : Double?, placeName : String?){
+  
+        if labelChange {
+            if(latitude != nil && longitude != nil ){
+            
+                let location = CLLocation(latitude: latitude!, longitude: longitude!)
+        
+                geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+            
+                    if let addressInstance = placemarks?[0] {
+                 
+                        let address = addressInstance.name
+                        self.addressView.setTitle(address, for: .normal)
+                
+                    }
+                })
+            }
+        } else if placeName != nil {
+
+            self.addressView.setTitle(placeName, for: .normal)
+        }
+        
+    }
+    
+    //Side Menu Setting
     private func selectedPresentationStyle() -> SideMenuPresentationStyle {
         return .menuSlideIn
     }
@@ -281,4 +408,11 @@ class MainViewController: UIViewController, MTMapViewDelegate {
         
         return settings
     }
+}
+extension Notification.Name {
+    static let updateSearchingCondition = Notification.Name("updateSearchingCondition")
+    static let lookFavorite = Notification.Name("lookFavorite")
+    static let reservationPopup = Notification.Name("reservationPopup")
+    static let startCharge = Notification.Name("startCharge")
+    static let searchAddress = Notification.Name("searchAddress")
 }

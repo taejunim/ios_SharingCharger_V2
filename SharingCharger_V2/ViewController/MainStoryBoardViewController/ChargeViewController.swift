@@ -6,6 +6,7 @@
 //
 import UIKit
 import Alamofire
+import EvzBLEKit
 
 class ChargeViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -28,7 +29,7 @@ class ChargeViewController : UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         print("ChargeViewController - viewDidLoad")
-        
+
         Common.setButton(button: chargeStart, able: true, color: ColorE0E0E0, radius: 7, action: #selector(chargeStartButton), target : self)
         Common.setButton(button: chargeEnd, able: true, color: ColorE0E0E0, radius: 7, action: #selector(chargeEndButton), target : self)
         Common.setButton(button: chargeEnd, able: true, color: ColorE0E0E0, radius: 7, action: #selector(chargeEndErrorButton), target : self)
