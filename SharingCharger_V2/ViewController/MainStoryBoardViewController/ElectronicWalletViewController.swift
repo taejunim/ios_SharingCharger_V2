@@ -22,7 +22,7 @@ class ElectronicWalletViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = Common.addRightMenu(imageName: "menu_list", action: #selector(rightMenu), menuSize: CGSize(width:25, height:25), viewController: self)
+        
         walletView.layer.cornerRadius = 40
         plusView.layer.cornerRadius = 40
         
@@ -37,16 +37,6 @@ class ElectronicWalletViewController : UIViewController {
         
     }
     
-    @objc func rightMenu(){
-        print("우측 메뉴 클릭")
-        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchingPointHistoryCondition") else { return }
-        
-        let bottomSheet = Common.createHistorySearchCondition(rootViewController: self, sheetViewController : viewController)
-        present(bottomSheet, animated: true, completion: nil)
-        
-        
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
     //잔여 포인트 
     private func getPoint() {
         

@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0E36D0A0262EA4BE00EBA590 /* ChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */; };
-		0E36D0A3262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0A2262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift */; };
+		0E36D0A3262FAF3E00EBA590 /* PointHistorySearchConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0A2262FAF3E00EBA590 /* PointHistorySearchConditionViewController.swift */; };
 		0E36D0FB263258EA00EBA590 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */; };
 		0E36D0FE2632972A00EBA590 /* UserCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */; };
 		0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6215F62626B09800585932 /* PasswordInitViewController.swift */; };
 		0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */; };
 		0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */; };
-		0E6A1BDD262963CB007C476C /* HistoryPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A1BDC262963CB007C476C /* HistoryPointViewController.swift */; };
+		0E6A1BDD262963CB007C476C /* PointHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A1BDC262963CB007C476C /* PointHistoryViewController.swift */; };
 		0E815CE92626CFE0001FFD11 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CE82626CFE0001FFD11 /* SettingViewController.swift */; };
 		0E815CF52627E081001FFD11 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */; };
 		0E815CFA2628361B001FFD11 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815CF92628361B001FFD11 /* FavoriteCell.swift */; };
@@ -77,10 +77,11 @@
 		C66092452620349E005F2518 /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = C66092292620349E005F2518 /* daum_th_line.png */; };
 		C66092462620349E005F2518 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = C660922A2620349E005F2518 /* map_pin_shadow.png */; };
 		C66092472620349F005F2518 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C660922B2620349E005F2518 /* DaumMap.framework */; };
+		C668B328264A3C8D0061D307 /* SearchHistoryConditionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C668B327264A3C8D0061D307 /* SearchHistoryConditionObject.swift */; };
 		C6C47D582637E97E002ACDE0 /* SelectedPositionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C47D572637E97E002ACDE0 /* SelectedPositionObject.swift */; };
-		C6C47D65263BF1E3002ACDE0 /* EvzBLEKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C47D62263BF1CA002ACDE0 /* EvzBLEKit.xcframework */; };
-		C6C47D66263BF1E3002ACDE0 /* EvzBLEKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6C47D62263BF1CA002ACDE0 /* EvzBLEKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C6C47D69263FC0E2002ACDE0 /* KakaoAddressObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C47D68263FC0E2002ACDE0 /* KakaoAddressObject.swift */; };
+		C6C47D6E26410819002ACDE0 /* EvzBLEKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C47D6C264107FF002ACDE0 /* EvzBLEKit.xcframework */; };
+		C6C47D6F26410819002ACDE0 /* EvzBLEKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6C47D6C264107FF002ACDE0 /* EvzBLEKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC3DD612BA167EC7566C7643 /* Pods_SharingCharger_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35DED6EB496C57CB111200F /* Pods_SharingCharger_V2.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +92,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C6C47D66263BF1E3002ACDE0 /* EvzBLEKit.xcframework in Embed Frameworks */,
+				C6C47D6F26410819002ACDE0 /* EvzBLEKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,13 +101,13 @@
 
 /* Begin PBXFileReference section */
 		0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeViewController.swift; sourceTree = "<group>"; };
-		0E36D0A2262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingPointHistoryConditionViewController.swift; sourceTree = "<group>"; };
+		0E36D0A2262FAF3E00EBA590 /* PointHistorySearchConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistorySearchConditionViewController.swift; sourceTree = "<group>"; };
 		0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationViewController.swift; sourceTree = "<group>"; };
 		0E6215F62626B09800585932 /* PasswordInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInitViewController.swift; sourceTree = "<group>"; };
 		0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInitCompleteViewController.swift; sourceTree = "<group>"; };
 		0E6A1BD926296100007C476C /* HistoryPointTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPointTableCell.swift; sourceTree = "<group>"; };
-		0E6A1BDC262963CB007C476C /* HistoryPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPointViewController.swift; sourceTree = "<group>"; };
+		0E6A1BDC262963CB007C476C /* PointHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryViewController.swift; sourceTree = "<group>"; };
 		0E815CE82626CFE0001FFD11 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		0E815CF92628361B001FFD11 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
@@ -182,9 +183,10 @@
 		C66092292620349E005F2518 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		C660922A2620349E005F2518 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		C660922B2620349E005F2518 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		C668B327264A3C8D0061D307 /* SearchHistoryConditionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryConditionObject.swift; sourceTree = "<group>"; };
 		C6C47D572637E97E002ACDE0 /* SelectedPositionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPositionObject.swift; sourceTree = "<group>"; };
-		C6C47D62263BF1CA002ACDE0 /* EvzBLEKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EvzBLEKit.xcframework; path = ../../../SharingCharger/SharingCharger/Library/EvzBLEKit.xcframework; sourceTree = "<group>"; };
 		C6C47D68263FC0E2002ACDE0 /* KakaoAddressObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAddressObject.swift; sourceTree = "<group>"; };
+		C6C47D6C264107FF002ACDE0 /* EvzBLEKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EvzBLEKit.xcframework; path = ../../../../../../Develop/IOS_SDK_20_12_01/EvzBLEKit.xcframework; sourceTree = "<group>"; };
 		F35DED6EB496C57CB111200F /* Pods_SharingCharger_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharingCharger_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,7 +199,7 @@
 				C660915D26201DFC005F2518 /* libxml2.tbd in Frameworks */,
 				C660915A26201DF0005F2518 /* libc++.tbd in Frameworks */,
 				C660915826201DE3005F2518 /* QuartzCore.framework in Frameworks */,
-				C6C47D65263BF1E3002ACDE0 /* EvzBLEKit.xcframework in Frameworks */,
+				C6C47D6E26410819002ACDE0 /* EvzBLEKit.xcframework in Frameworks */,
 				C660915626201DD6005F2518 /* CoreLocation.framework in Frameworks */,
 				C660915426201DCE005F2518 /* SystemConfiguration.framework in Frameworks */,
 				C660915226201DC5005F2518 /* OpenGLES.framework in Frameworks */,
@@ -335,9 +337,9 @@
 				C63BCA2F26281717008BDBEE /* AddressViewController.swift */,
 				C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */,
 				0E815D0026292989001FFD11 /* FavoriteViewController.swift */,
-				0E6A1BDC262963CB007C476C /* HistoryPointViewController.swift */,
+				0E6A1BDC262963CB007C476C /* PointHistoryViewController.swift */,
+				0E36D0A2262FAF3E00EBA590 /* PointHistorySearchConditionViewController.swift */,
 				0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */,
-				0E36D0A2262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift */,
 				C65DA036263027D4005179C4 /* ChargerSearchConditionViewController.swift */,
 				0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */,
 				0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */,
@@ -348,7 +350,7 @@
 		C660920426203472005F2518 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				C6C47D62263BF1CA002ACDE0 /* EvzBLEKit.xcframework */,
+				C6C47D6C264107FF002ACDE0 /* EvzBLEKit.xcframework */,
 				C66092052620349E005F2518 /* DaumMap.embeddedframework */,
 			);
 			path = Library;
@@ -418,6 +420,7 @@
 			children = (
 				C6C47D572637E97E002ACDE0 /* SelectedPositionObject.swift */,
 				C6C47D68263FC0E2002ACDE0 /* KakaoAddressObject.swift */,
+				C668B327264A3C8D0061D307 /* SearchHistoryConditionObject.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -567,8 +570,9 @@
 				C65DA03A26310625005179C4 /* CustomTextField.swift in Sources */,
 				C66090E4261AAEB2005F2518 /* LoginViewController.swift in Sources */,
 				0E815CE92626CFE0001FFD11 /* SettingViewController.swift in Sources */,
+				C668B328264A3C8D0061D307 /* SearchHistoryConditionObject.swift in Sources */,
 				C65DA0492636B44D005179C4 /* AddressTableCell.swift in Sources */,
-				0E6A1BDD262963CB007C476C /* HistoryPointViewController.swift in Sources */,
+				0E6A1BDD262963CB007C476C /* PointHistoryViewController.swift in Sources */,
 				C6C47D69263FC0E2002ACDE0 /* KakaoAddressObject.swift in Sources */,
 				0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */,
 				0E36D0FE2632972A00EBA590 /* UserCertificationViewController.swift in Sources */,
@@ -594,7 +598,7 @@
 				C66090EB261AC706005F2518 /* MainViewController.swift in Sources */,
 				0E6215F72626B09800585932 /* PasswordInitViewController.swift in Sources */,
 				C63BCA3326283BC0008BDBEE /* ElectronicWalletViewController.swift in Sources */,
-				0E36D0A3262FAF3E00EBA590 /* SearchingPointHistoryConditionViewController.swift in Sources */,
+				0E36D0A3262FAF3E00EBA590 /* PointHistorySearchConditionViewController.swift in Sources */,
 				C632A5032626ED1800DA604B /* ChargerUseHistoryViewController.swift in Sources */,
 				0E36D0A0262EA4BE00EBA590 /* ChargeViewController.swift in Sources */,
 				0E815CFA2628361B001FFD11 /* FavoriteCell.swift in Sources */,

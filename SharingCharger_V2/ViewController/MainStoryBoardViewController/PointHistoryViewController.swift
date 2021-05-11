@@ -1,5 +1,5 @@
 //
-//  HistoryPointViewController.swift
+//  PointHistoryViewController.swift
 //  SharingCharger_V2
 //  포인트 이력 화면 View Controller
 //  Created by 김재연 on 2021/04/16.
@@ -7,16 +7,25 @@
 
 import Alamofire
 
-class HistoryPointViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    
+class PointHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SearchPointHistoryProtocol {
+    func searchPointConditionDelegate(data: SearchingHistoryConditionObject) {
+        NotificationCenter.default.post(name: .updatePointSearchCondition, object: data, userInfo: nil)
+    }
     
     @IBOutlet var pointLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
     var utils                     : Utils?
     var activityIndicator         : UIActivityIndicatorView?
+    
+    
+    /** 아직 이력 조회 API 파라미터가 정의되지 않아 임의로 1차년도떄와 같이  size, page, 시작날짜, 종료날짜, 정렬, 사용타입*/
+    let size                                  = 10
+    var page                                  = 1
+    var startDate                             = ""
+    var endDate                               = ""
+    var sort                                  = "DESC"
+    var pointUsedType                         = "ALL"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +35,14 @@ class HistoryPointViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.allowsSelection = false
         self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)     //table view margin 제거
         
+        navigationItem.rightBarButtonItem = Common.addRightMenu(imageName: "menu_list", action: #selector(rightMenu), menuSize: CGSize(width:25, height:25), viewController: self)
+        
+        //검색조건에서 돌아왔을때 탈 Event 등록
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointSearchCondition(_:)), name: .updatePointSearchCondition, object: nil)
+        
+        //포인트 라벨 둥글게
+        pointLabel.layer.cornerRadius = 7.0
+        
         //로딩 뷰
         utils             = Utils(superView: self.view)
         activityIndicator = utils!.activityIndicator
@@ -34,6 +51,15 @@ class HistoryPointViewController: UIViewController, UITableViewDelegate, UITable
         getPointUsageHistoryData()
     }
     
+    @objc func rightMenu(){
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchingPointHistoryCondition") else { return }
+        
+        let bottomSheet = Common.createHistorySearchCondition(rootViewController: self, sheetViewController : viewController)
+        present(bottomSheet, animated: true, completion: nil)
+        
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -187,6 +213,28 @@ class HistoryPointViewController: UIViewController, UITableViewDelegate, UITable
         })
         
     }
-    
-    
+    //검색조건에서 적용버튼으로 돌아왔을때 이벤트
+    @objc func updatePointSearchCondition(_ notification: Notification) {
+        
+        let data = notification.object as! SearchingHistoryConditionObject
+        
+        startDate       = data.startDate
+        endDate         = data.endDate
+        sort            = data.sort
+        pointUsedType   = data.pointUsedType
+        
+        print("startDate     : \(startDate)")
+        print("endDate       : \(endDate)")
+        print("sort          : \(sort)")
+        print("pointUsedType : \(pointUsedType)")
+        //이 하단부터 가져온 파라미터를 가지고 API를 새로 호출하면 됨
+        //arr.removeAll()
+        
+        //page      = 1
+        //getChargingHistoryData()
+
+    }
+}
+extension Notification.Name {
+    static let updatePointSearchCondition = Notification.Name("updatePointSearchCondition")
 }

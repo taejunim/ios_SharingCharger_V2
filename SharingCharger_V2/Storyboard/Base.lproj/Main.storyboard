@@ -2027,7 +2027,7 @@
         <!--포인트 이력_검색조건 -->
         <scene sceneID="oVD-aX-dPa">
             <objects>
-                <viewController storyboardIdentifier="SearchingPointHistoryCondition" title="포인트 이력_검색조건 " id="bd2-IH-S5n" customClass="SearchingPointHistoryConditionViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchingPointHistoryCondition" title="포인트 이력_검색조건 " id="bd2-IH-S5n" customClass="PointHistorySearchConditionViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bov-1d-qhL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2115,6 +2115,9 @@
                                                         <date key="date" timeIntervalSinceReferenceDate="625566996.62311602">
                                                             <!--2020-10-28 08:36:36 +0000-->
                                                         </date>
+                                                        <connections>
+                                                            <action selector="changeDate:" destination="bd2-IH-S5n" eventType="valueChanged" id="MlS-vw-WUl"/>
+                                                        </connections>
                                                     </datePicker>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료일시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zP-uQ-y0P" userLabel="끝 일시">
                                                         <rect key="frame" x="25" y="195" width="365" height="20"/>
@@ -2130,6 +2133,9 @@
                                                         <date key="date" timeIntervalSinceReferenceDate="625566996.62311602">
                                                             <!--2020-10-28 08:36:36 +0000-->
                                                         </date>
+                                                        <connections>
+                                                            <action selector="changeDate:" destination="bd2-IH-S5n" eventType="valueChanged" id="4Xl-mw-3zc"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2723,7 +2729,7 @@
         <!--포인트 이력-->
         <scene sceneID="PW2-sv-hnD">
             <objects>
-                <viewController storyboardIdentifier="PointUseHistory" title="포인트 이력" id="31S-zk-owI" customClass="HistoryPointViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PointUseHistory" title="포인트 이력" id="31S-zk-owI" customClass="PointHistoryViewController" customModule="SharingCharger_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B8r-5A-y6P">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
