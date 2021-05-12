@@ -320,7 +320,7 @@ class MainViewController: UIViewController, MTMapViewDelegate, AddressProtocol {
                 //Redirect to Settings app
                 UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
             })
-
+            
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(cancelAction)
 

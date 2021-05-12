@@ -6,17 +6,22 @@
 //
 import UIKit
 import Toast_Swift
+import CoreLocation
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("LoginViewController - viewDidLoad")
         
         Common.setKeyboard(view: self.view)
+        
+        locationManager.requestWhenInUseAuthorization() //위치 권한
     }
     
     //로그인 버튼
@@ -95,3 +100,5 @@ class LoginViewController: UIViewController {
     }
     
 }
+
+

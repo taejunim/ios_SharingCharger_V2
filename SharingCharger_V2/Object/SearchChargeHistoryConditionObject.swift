@@ -1,14 +1,13 @@
 //
 //  SearchingHistoryConditionObject.swift
 //  SharingCharger_V2
-//  이력조회 검색 조건을 넘기기 위한 Object
-//  Created by 조유영 on 2021/05/11.
+//  Description - 충전이력 검색조건 object
+//  Created by 김재연 on 2021/05/10.
 //
 
-class SearchHistoryConditionObject {
+class SearchChargeHistoryConditionObject {
 
     var startDate       : String = ""
     var endDate         : String = ""
     var sort            : String = ""
-    var pointUsedType   : String = ""
 }

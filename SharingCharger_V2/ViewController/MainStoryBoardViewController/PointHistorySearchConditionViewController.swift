@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchPointHistoryProtocol {
-    func searchPointConditionDelegate(data: SearchingHistoryConditionObject)
+    func searchPointConditionDelegate(data: SearchHistoryConditionObject)
 }
 class PointHistorySearchConditionViewController : UIViewController {
     
@@ -52,6 +52,7 @@ class PointHistorySearchConditionViewController : UIViewController {
     let calendar                              = Calendar.current
     let date                                  = Date()
     let dateFormatter                         = DateFormatter()
+    
     
     var startDate                             = ""
     var endDate                               = ""
@@ -109,7 +110,7 @@ class PointHistorySearchConditionViewController : UIViewController {
     
     @objc func adjust(sender: UIButton!) {
         print("적용")
-        let searchHistoryConditionObject            = SearchingHistoryConditionObject()
+        let searchHistoryConditionObject            = SearchHistoryConditionObject()
         searchHistoryConditionObject.startDate      = startDateLabel.text!
         searchHistoryConditionObject.endDate        = endDateLabel.text!
         searchHistoryConditionObject.sort           = sortArray[selectedSort]

@@ -1615,8 +1615,8 @@
                     </view>
                     <connections>
                         <outlet property="currentPasswordTextField" destination="28a-cA-FCH" id="6tZ-wj-Mec"/>
-                        <outlet property="passwordChangeCompleteButton" destination="AIw-M6-3gY" id="JhL-ep-buh"/>
                         <outlet property="passwordConfirmTextField" destination="rKV-cJ-bwS" id="NGb-fg-LCM"/>
+                        <outlet property="passwordInitCompleteButton" destination="AIw-M6-3gY" id="7q7-gx-5aF"/>
                         <outlet property="passwordTextField" destination="DbL-1h-zKZ" id="J5C-8o-gco"/>
                         <outlet property="scrollView" destination="cxW-e9-eBb" id="kbx-bf-ko7"/>
                     </connections>
@@ -1846,6 +1846,9 @@
                                                                 <date key="date" timeIntervalSinceReferenceDate="625566996.62311602">
                                                                     <!--2020-10-28 08:36:36 +0000-->
                                                                 </date>
+                                                                <connections>
+                                                                    <action selector="changeDate:" destination="xY8-Dj-cLs" eventType="valueChanged" id="V1W-C9-Fu4"/>
+                                                                </connections>
                                                             </datePicker>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료일시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSp-Xb-RO2" userLabel="끝 일시">
                                                                 <rect key="frame" x="25" y="196" width="340" height="20.333333333333343"/>
@@ -1861,6 +1864,9 @@
                                                                 <date key="date" timeIntervalSinceReferenceDate="625566996.62311602">
                                                                     <!--2020-10-28 08:36:36 +0000-->
                                                                 </date>
+                                                                <connections>
+                                                                    <action selector="changeDate:" destination="xY8-Dj-cLs" eventType="valueChanged" id="qOZ-1H-fiM"/>
+                                                                </connections>
                                                             </datePicker>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2013,9 +2019,8 @@
                         <outlet property="endDatepicker" destination="TOl-mV-oFM" id="Syx-y0-P90"/>
                         <outlet property="oneMonth" destination="d8m-yQ-FbT" id="d7P-qJ-bYB"/>
                         <outlet property="ownPeriod" destination="Bb5-KN-Q7B" id="7qW-RM-DPr"/>
-                        <outlet property="periodLabels" destination="37G-sC-bx2" id="I5b-JY-qDz"/>
                         <outlet property="sixMonth" destination="58o-id-J2c" id="O9Z-OC-5Ht"/>
-                        <outlet property="startDateLabel" destination="37G-sC-bx2" id="s6s-lm-Zvu"/>
+                        <outlet property="startDateLabel" destination="va6-W1-kR4" id="zFz-WT-Yeb"/>
                         <outlet property="startDatepicker" destination="uwk-FX-rln" id="rMB-nz-LCs"/>
                         <outlet property="threeMonth" destination="4VD-EY-j2a" id="Pa8-Qb-MdW"/>
                     </connections>
@@ -2369,7 +2374,7 @@
                         <outlet property="startDatepicker" destination="U17-g6-SoO" id="qOC-GN-lch"/>
                         <outlet property="threeMonth" destination="AvN-4w-g2k" id="uwo-T2-Y46"/>
                         <outlet property="use" destination="zpQ-jQ-vC8" id="Wy2-31-ze5"/>
-                        <outlet property="whole" destination="if4-eh-nAi" id="6Hc-Ke-iKv"/>
+                        <outlet property="whole" destination="if4-eh-nAi" id="JRW-Uc-GlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffd-4J-Ckl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

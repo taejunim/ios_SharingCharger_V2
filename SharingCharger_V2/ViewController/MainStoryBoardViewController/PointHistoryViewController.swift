@@ -1,14 +1,14 @@
 //
 //  PointHistoryViewController.swift
 //  SharingCharger_V2
-//  포인트 이력 화면 View Controller
+//  Description - 포인트 이력 화면 View Controller
 //  Created by 김재연 on 2021/04/16.
 //
 
 import Alamofire
 
 class PointHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SearchPointHistoryProtocol {
-    func searchPointConditionDelegate(data: SearchingHistoryConditionObject) {
+    func searchPointConditionDelegate(data: SearchHistoryConditionObject) {
         NotificationCenter.default.post(name: .updatePointSearchCondition, object: data, userInfo: nil)
     }
     
@@ -216,7 +216,7 @@ class PointHistoryViewController: UIViewController, UITableViewDelegate, UITable
     //검색조건에서 적용버튼으로 돌아왔을때 이벤트
     @objc func updatePointSearchCondition(_ notification: Notification) {
         
-        let data = notification.object as! SearchingHistoryConditionObject
+        let data = notification.object as! SearchHistoryConditionObject
         
         startDate       = data.startDate
         endDate         = data.endDate

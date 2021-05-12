@@ -39,7 +39,8 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     
     @objc func passwordInitComplete(sender: UIButton) {
         
-        if myUserDefaults.string(forKey: "password")!.trimmingCharacters(in: .whitespacesAndNewlines) != currentPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) {
+        
+        if myUserDefaults.string(forKey: "password")?.trimmingCharacters(in: .whitespacesAndNewlines) != currentPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) {
             self.view.makeToast("현재 비밀번호가 일치하지 않습니다.", duration: 2.0, position: .bottom)
             return
         } else if passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) != passwordConfirmTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) {
