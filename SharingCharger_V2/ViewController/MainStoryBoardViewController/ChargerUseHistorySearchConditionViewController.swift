@@ -15,10 +15,13 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
     
     var delegate: SearchChargeConditionProtocol?
     
+    
     @IBOutlet var oneMonth: UIButton!
     @IBOutlet var threeMonth: UIButton!
     @IBOutlet var sixMonth: UIButton!
     @IBOutlet var ownPeriod: UIButton!
+    
+    @IBOutlet var arrow: UIImageView!               //직접선택버튼 화살표
   
     @IBOutlet var startDateLabel: UILabel!
     @IBOutlet var endDateLabel: UILabel!
@@ -50,6 +53,8 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
     var endDate                                   = ""
     
     var selectedSort                              = 0
+    
+    var count = 0           //직접선택 클릭 횟수
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +93,7 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
         Common.setButton(button: adjustButton, able: true, color: nil, radius: 7, action: #selector(adjust), target: self)
         
     }
-
+    
     //적용 버튼
     @objc func adjust(sender: UIButton!) {
         print("적용")
@@ -96,29 +101,27 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
         searchChargeHistoryConditionObject.startDate      = startDateLabel.text!
         searchChargeHistoryConditionObject.endDate        = endDateLabel.text!
         searchChargeHistoryConditionObject.sort           = sortArray[selectedSort]
-
+        
         delegate?.searchingChargeConditionDelegate(data: searchChargeHistoryConditionObject)
         self.dismiss(animated: true, completion: nil)
     }
-
-    
     
     //datepicker 직접 변경시에 종료날짜가 오늘날짜보다 크거나, 시작날짜가 종료날짜보다 클때를 막는다
     @IBAction func changeDate(_ sender: UIDatePicker) {
         var originalDate:String                                     = ""
         
         switch sender {
-                        case startDatepicker :
-                                                originalDate        = startDateLabel.text!
-                                                startDateLabel.text = dateFormatter.string(from: sender.date)
-                                                break
+        case startDatepicker :
+            originalDate        = startDateLabel.text!
+            startDateLabel.text = dateFormatter.string(from: sender.date)
+            break
             
-                        case endDatepicker   :
-                                                originalDate        = endDateLabel.text!
-                                                endDateLabel.text   = dateFormatter.string(from: sender.date)
-                                                break
-                        default:
-                                                break
+        case endDatepicker   :
+            originalDate        = endDateLabel.text!
+            endDateLabel.text   = dateFormatter.string(from: sender.date)
+            break
+        default:
+            break
         }
         
         if(endDatepicker.date > Date()){
@@ -143,7 +146,7 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
     
     //조회기간 버튼 설정
     @IBAction func setPeriodButton(_ sender: UIButton) {
-    
+        
         for index in 0...3 {
             if(index == periodButtonArray.firstIndex(of: sender)){
                 Common.setButton(button: periodButtonArray[index], able: true, color: Color3498DB, radius: 0, action: nil, target: self)
@@ -163,26 +166,27 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
     
     //정렬 버튼 설정
     @IBAction func setSortButton(_ sender: UIButton) {
-        
+        activateView(active: false)
+        arrow.image = UIImage(named: "searching_condition_arrow_off")
         for index in 0...1 {
             if(index == sortButtonArray.firstIndex(of: sender)){
-            
+                
                 Common.setButton(button: sortButtonArray[index], able: true, color: Color3498DB, radius: 0, action: nil, target: self)
                 Common.setButtonBorder(button: sortButtonArray[index], borderWidth: buttonBorderWidth, borderColor: Color3498DB)
                 sortButtonArray[index].setTitleColor(ColorWhite, for: .normal)
                 selectedSort = index
-            
+                
             } else{
-
+                
                 Common.setButton(button: sortButtonArray[index], able: true, color: ColorWhite, radius: 0, action: nil, target: self)
                 Common.setButtonBorder(button: sortButtonArray[index], borderWidth: buttonBorderWidth, borderColor: ColorE0E0E0)
                 sortButtonArray[index].setTitleColor(ColorE0E0E0, for: .normal)
-            
+           
             }
         }
-        
     }
     
+    //date picker view
     private func activateView(active: Bool!) {
         
         switch active {
@@ -197,48 +201,54 @@ class ChargerUseHistorySearchConditionViewController : UIViewController {
         default    :    break
         }
         UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
-        
     }
-    
-   
     
     //조회기간 버튼 선택에 따른 변화
     func onPeriodButtonClick(_ range : UIButton){
-
         
         if(range == ownPeriod){
+            arrow.isHidden = false
+            count += 1
             
-            activateView(active: true)
-            
+            if(count % 2 == 0) {
+                activateView(active: false)
+                arrow.image = UIImage(named: "searching_condition_arrow_off")
+                
+            } else {
+                activateView(active: true)
+                arrow.image = UIImage(named: "searching_condition_arrow")
+            }
         }else{
-            
+            count = 0
+            arrow.isHidden = true
             activateView(active: false)
-
+            
             switch range {
-                case oneMonth:
-                    startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -1, to: date)!)
-                                  break
-                case threeMonth:
-                    startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -3, to: date)!)
-                                  break
-                case sixMonth:
-                    startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -6, to: date)!)
-                                  break
-                default:          break
+            case oneMonth:
+                startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -1, to: date)!)
+                break
+            case threeMonth:
+                startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -3, to: date)!)
+                break
+            case sixMonth:
+                startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -6, to: date)!)
+                break
+            default:
+                break
             }
             endDate             = dateFormatter.string(from: date)
-
+            
             startDateLabel.text = startDate
             endDateLabel.text   = endDate
         }
-        
     }
-
+    
     //새로고침 버튼
     @objc func refreshButton(sender: UIButton!) {
         setPeriodButton(oneMonth)
         setSortButton(desc)
     }
+    
     //창 닫기 버튼
     @objc func closeButton(sender: UIButton!) {
         self.dismiss(animated: true, completion: nil)

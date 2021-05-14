@@ -19,6 +19,8 @@ class PointHistorySearchConditionViewController : UIViewController {
     @IBOutlet var sixMonth: UIButton!
     @IBOutlet var ownPeriod: UIButton!
     
+    @IBOutlet var arrow: UIImageView!       //직접선택버튼 화살표
+    
     @IBOutlet var periodLabels: UIView!
     @IBOutlet var startDateLabel: UILabel!
     @IBOutlet var endDateLabel: UILabel!
@@ -53,6 +55,7 @@ class PointHistorySearchConditionViewController : UIViewController {
     let date                                  = Date()
     let dateFormatter                         = DateFormatter()
     
+    var count                                 = 0
     
     var startDate                             = ""
     var endDate                               = ""
@@ -107,7 +110,7 @@ class PointHistorySearchConditionViewController : UIViewController {
         Common.setButton(button: adjustButton, able: true, color: nil, radius: 7, action: #selector(adjust), target: self)
     }
     
-    
+    //적용 버튼
     @objc func adjust(sender: UIButton!) {
         print("적용")
         let searchHistoryConditionObject            = SearchHistoryConditionObject()
@@ -126,17 +129,17 @@ class PointHistorySearchConditionViewController : UIViewController {
         var originalDate:String                                     = ""
         
         switch sender {
-                        case startDatepicker :
-                                                originalDate        = startDateLabel.text!
-                                                startDateLabel.text = dateFormatter.string(from: sender.date)
-                                                break
+        case startDatepicker :
+            originalDate        = startDateLabel.text!
+            startDateLabel.text = dateFormatter.string(from: sender.date)
+            break
             
-                        case endDatepicker   :
-                                                originalDate        = endDateLabel.text!
-                                                endDateLabel.text   = dateFormatter.string(from: sender.date)
-                                                break
-                        default:
-                                                break
+        case endDatepicker   :
+            originalDate        = endDateLabel.text!
+            endDateLabel.text   = dateFormatter.string(from: sender.date)
+            break
+        default:
+            break
         }
         
         if(endDatepicker.date > Date()){
@@ -157,9 +160,9 @@ class PointHistorySearchConditionViewController : UIViewController {
             }
             return
         }
-        
     }
     
+    //조회기간 버튼 설정
     @IBAction func setPeriodButton(_ sender: UIButton) {
         
         for index in 0...3 {
@@ -176,11 +179,12 @@ class PointHistorySearchConditionViewController : UIViewController {
             }
         }
         onPeriodButtonClick(sender)
-        
     }
     
+    //조회기간 버튼 설정
     @IBAction func setTypeButton(_ sender: UIButton) {
-        
+        activateView(active: false)
+        arrow.image = UIImage(named: "searching_condition_arrow_off")
         for index in 0...3 {
             if(index == typeButtonArray.firstIndex(of: sender)){
                 Common.setButton(button: typeButtonArray[index], able: true, color: Color3498DB, radius: 0, action: nil, target: self)
@@ -195,11 +199,12 @@ class PointHistorySearchConditionViewController : UIViewController {
                 
             }
         }
-        
     }
     
+    //정렬 버튼 설정
     @IBAction func setSortButton(_ sender: UIButton) {
-        
+        activateView(active: false)
+        arrow.image = UIImage(named: "searching_condition_arrow_off")
         for index in 0...1 {
             if(index == sortButtonArray.firstIndex(of: sender)){
                 
@@ -216,9 +221,9 @@ class PointHistorySearchConditionViewController : UIViewController {
                 
             }
         }
-        
     }
     
+    //date picker view
     private func activateView(active: Bool!) {
         
         switch active {
@@ -233,39 +238,56 @@ class PointHistorySearchConditionViewController : UIViewController {
         default    :    break
         }
         UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
-        
     }
+    
+    //조회기간 버튼 선택에 따른 변화
     func onPeriodButtonClick(_ range : UIButton){
         
         if(range == ownPeriod){
-            activateView(active: true)
+            arrow.isHidden = false
+            count += 1
+            
+            if(count % 2 == 0) {
+                activateView(active: false)
+                arrow.image = UIImage(named: "searching_condition_arrow_off")
+                
+            } else {
+                activateView(active: true)
+                arrow.image = UIImage(named: "searching_condition_arrow")
+            }
         }else{
+            count = 0
+            arrow.isHidden = true
             activateView(active: false)
             switch range {
             
-             case oneMonth:
-             startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -1, to: date)!)
-             break
-             case threeMonth:
-             startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -3, to: date)!)
-             break
-             case sixMonth:
-             startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -6, to: date)!)
-             break
-             default:
-             break
-             }
-             endDate             = dateFormatter.string(from: date)
-             
-             startDateLabel.text = startDate
-             endDateLabel.text   = endDate
+            case oneMonth:
+                startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -1, to: date)!)
+                break
+            case threeMonth:
+                startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -3, to: date)!)
+                break
+            case sixMonth:
+                startDate   = dateFormatter.string(from : calendar.date(byAdding: .month,value: -6, to: date)!)
+                break
+            default:
+                break
+            }
+            endDate             = dateFormatter.string(from: date)
+            
+            startDateLabel.text = startDate
+            endDateLabel.text   = endDate
         }
     }
+    
+    //새로고침 버튼
     @objc func refreshButton(sender: UIButton!) {
         setPeriodButton(oneMonth)
         setSortButton(desc)
         setTypeButton(whole)
     }
+    
+    //창 닫기 버튼
     @objc func closeButton(sender: UIButton!) {
         self.dismiss(animated: true, completion: nil)
     }
