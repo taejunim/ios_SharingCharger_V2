@@ -247,13 +247,13 @@
 		BFF982EC265F698A0004CFB3 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
-				0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */,
-				0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */,
-				0E6215F62626B09800585932 /* PasswordInitViewController.swift */,
 				C66090FD261B0398005F2518 /* JoinViewController.swift */,
+				0E36D0FD2632972900EBA590 /* UserCertificationViewController.swift */,
 				C66090E3261AAEB2005F2518 /* LoginViewController.swift */,
-				0E815D0026292989001FFD11 /* FavoriteViewController.swift */,
 				0E815CF42627E081001FFD11 /* PasswordChangeViewController.swift */,
+				0E6215F62626B09800585932 /* PasswordInitViewController.swift */,
+				0E6215F92626BB6200585932 /* PasswordInitCompleteViewController.swift */,
+				0E815D0026292989001FFD11 /* FavoriteViewController.swift */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -261,11 +261,11 @@
 		BFF982ED265F699F0004CFB3 /* Charger */ = {
 			isa = PBXGroup;
 			children = (
-				0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */,
-				C65DA036263027D4005179C4 /* ChargerSearchConditionViewController.swift */,
-				0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */,
-				C63BCA2F26281717008BDBEE /* AddressViewController.swift */,
 				C66090EA261AC706005F2518 /* MainViewController.swift */,
+				C65DA036263027D4005179C4 /* ChargerSearchConditionViewController.swift */,
+				C63BCA2F26281717008BDBEE /* AddressViewController.swift */,
+				0E36D0FA263258EA00EBA590 /* ReservationViewController.swift */,
+				0E36D09F262EA4BE00EBA590 /* ChargeViewController.swift */,
 				C632A5022626ED1800DA604B /* ChargerUseHistoryViewController.swift */,
 				C630619126295CBA00A5D22F /* ChargerUseHistorySearchConditionViewController.swift */,
 			);
@@ -275,9 +275,9 @@
 		BFF982EE265F69AB0004CFB3 /* DigitalWalletManagement */ = {
 			isa = PBXGroup;
 			children = (
+				C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */,
 				0E6A1BDC262963CB007C476C /* PointHistoryViewController.swift */,
 				0E36D0A2262FAF3E00EBA590 /* PointHistorySearchConditionViewController.swift */,
-				C63BCA3226283BC0008BDBEE /* ElectronicWalletViewController.swift */,
 			);
 			path = DigitalWalletManagement;
 			sourceTree = "<group>";
