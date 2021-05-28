@@ -10,7 +10,6 @@ class SettingViewController: UIViewController {
     
     @IBOutlet var passwordChangeLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,4 +21,19 @@ class SettingViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    //로그아웃 버튼 실행
+    @IBAction func SignOutButton(_ sender: Any) {
+        
+        //자동 로그인 - UserDefaults 정보 삭제
+        UserDefaults.standard.removeObject(forKey: "id")
+        UserDefaults.standard.removeObject(forKey: "password")
+
+        var loginViewController: UIViewController!
+        loginViewController = UIStoryboard(name:"Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        
+        UIApplication.shared.windows.first?.rootViewController = navigationController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
 }

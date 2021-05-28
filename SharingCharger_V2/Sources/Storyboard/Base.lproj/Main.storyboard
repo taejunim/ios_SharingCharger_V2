@@ -1440,6 +1440,9 @@
                                 <state key="normal" title="로그아웃">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignOutButton:" destination="CMh-F7-ySr" eventType="touchUpInside" id="4Ti-t6-KtH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FBy-eE-1rB"/>

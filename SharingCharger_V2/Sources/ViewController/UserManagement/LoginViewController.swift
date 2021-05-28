@@ -16,12 +16,19 @@ class LoginViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        print("LoginViewController - viewDidLoad")
-        
         Common.setKeyboard(view: self.view)
-        
+    
         locationManager.requestWhenInUseAuthorization() //위치 권한
+        
+        //UserDefaults에 ID, Password가 저장되어 있는 경우 자동 로그인 실행
+        let id = UserDefaults.standard.string(forKey: "id")
+        let password = UserDefaults.standard.string(forKey: "password")
+        
+        if id != nil && password != nil {
+            autoLogin(id!, password!) //자동 로그인
+        }
     }
     
     //로그인 버튼
@@ -39,13 +46,11 @@ class LoginViewController: UIViewController {
         
         print("입력한 아이디 : \(id) 비밀번호 : \(password)")
         
-        var mainViewController: UIViewController!
-        mainViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Main") as! MainViewController
+        //자동 로그인 - UserDefaults에 ID, Password 저장
+        UserDefaults.standard.set(id, forKey: "id")
+        UserDefaults.standard.set(password, forKey: "password")
         
-        let navigationController = UINavigationController(rootViewController: mainViewController)
-        
-        UIApplication.shared.windows.first?.rootViewController = navigationController
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        MoveMainView()  //메인 화면 이동
     }
     
     //회원가입 버튼
@@ -99,6 +104,26 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    //메인 화면 이동
+    func MoveMainView() {
+        
+        var mainViewController: UIViewController!
+        mainViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Main") as! MainViewController
+        
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        
+        UIApplication.shared.windows.first?.rootViewController = navigationController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
+    //자동 로그인
+    func autoLogin(_ id: String, _ password: String) {
+        
+        print("Saved ID: \(id) / Saved Password: \(password)")
+        
+        //추후 API 연동하여 ID, Password 확인 후 로그인 성공인 경우 처리
+        MoveMainView()  //메인 화면 이동
+    }
 }
 
 
