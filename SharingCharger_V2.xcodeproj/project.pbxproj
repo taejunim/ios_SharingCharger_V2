@@ -23,6 +23,8 @@
 		0E815D0126292989001FFD11 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E815D0026292989001FFD11 /* FavoriteViewController.swift */; };
 		0EABA68C264A626C00BB4890 /* SearchHistoryConditionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EABA68B264A626C00BB4890 /* SearchHistoryConditionObject.swift */; };
 		0EABA68E264A639A00BB4890 /* SearchChargeHistoryConditionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EABA68D264A639A00BB4890 /* SearchChargeHistoryConditionObject.swift */; };
+		BF66EF6A2660D856004AD6F6 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66EF692660D856004AD6F6 /* UserApiService.swift */; };
+		BFD3AB0D266462BE00CCDEE6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3AB0C266462BE00CCDEE6 /* ApiService.swift */; };
 		C630618F26295BFF00A5D22F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630618E26295BFF00A5D22F /* CustomButton.swift */; };
 		C630619226295CBA00A5D22F /* ChargerUseHistorySearchConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630619126295CBA00A5D22F /* ChargerUseHistorySearchConditionViewController.swift */; };
 		C632A4EA2626702800DA604B /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632A4E92626702800DA604B /* LeftMenuViewController.swift */; };
@@ -118,6 +120,8 @@
 		0EABA68D264A639A00BB4890 /* SearchChargeHistoryConditionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchChargeHistoryConditionObject.swift; sourceTree = "<group>"; };
 		36DE4A3996AC4846ED649C69 /* Pods-SharingCharger_V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.release.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.release.xcconfig"; sourceTree = "<group>"; };
 		7FC2E17495C0C5FF867297F2 /* Pods-SharingCharger_V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharingCharger_V2.debug.xcconfig"; path = "Target Support Files/Pods-SharingCharger_V2/Pods-SharingCharger_V2.debug.xcconfig"; sourceTree = "<group>"; };
+		BF66EF692660D856004AD6F6 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
+		BFD3AB0C266462BE00CCDEE6 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C630618E26295BFF00A5D22F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C630619126295CBA00A5D22F /* ChargerUseHistorySearchConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerUseHistorySearchConditionViewController.swift; sourceTree = "<group>"; };
 		C632A4E92626702800DA604B /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF66EF682660D37A004AD6F6 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				BF66EF692660D856004AD6F6 /* UserApiService.swift */,
+				BFD3AB0C266462BE00CCDEE6 /* ApiService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
 		BFF982EC265F698A0004CFB3 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +298,7 @@
 		BFF982EF265F6A200004CFB3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BF66EF682660D37A004AD6F6 /* APIService */,
 				C6C47D562637E94F002ACDE0 /* Object */,
 				BFF982F2265F6B5F0004CFB3 /* Cell */,
 				BFF982F1265F6B510004CFB3 /* ViewController */,
@@ -610,11 +624,13 @@
 				0E6A1BDD262963CB007C476C /* PointHistoryViewController.swift in Sources */,
 				C6C47D69263FC0E2002ACDE0 /* KakaoAddressObject.swift in Sources */,
 				0E6A1BDA26296100007C476C /* HistoryPointTableCell.swift in Sources */,
+				BF66EF6A2660D856004AD6F6 /* UserApiService.swift in Sources */,
 				0E36D0FE2632972A00EBA590 /* UserCertificationViewController.swift in Sources */,
 				0E36D0FB263258EA00EBA590 /* ReservationViewController.swift in Sources */,
 				C630618F26295BFF00A5D22F /* CustomButton.swift in Sources */,
 				C660910A261C4A39005F2518 /* Common.swift in Sources */,
 				0E6215FA2626BB6200585932 /* PasswordInitCompleteViewController.swift in Sources */,
+				BFD3AB0D266462BE00CCDEE6 /* ApiService.swift in Sources */,
 				0E815D0126292989001FFD11 /* FavoriteViewController.swift in Sources */,
 				C66090C8261AA4C6005F2518 /* AppDelegate.swift in Sources */,
 				0EABA68E264A639A00BB4890 /* SearchChargeHistoryConditionObject.swift in Sources */,

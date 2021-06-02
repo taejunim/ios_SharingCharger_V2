@@ -13,7 +13,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var utils: Utils?
+    var activityIndicator: UIActivityIndicatorView?
+    
     let locationManager = CLLocationManager()
+    let userApiService = UserApiService()   //User API Service
     
     override func viewDidLoad() {
         
@@ -21,6 +25,11 @@ class LoginViewController: UIViewController {
         Common.setKeyboard(view: self.view)
     
         locationManager.requestWhenInUseAuthorization() //위치 권한
+        
+        //로딩 뷰
+        utils = Utils(superView: self.view)
+        activityIndicator = utils!.activityIndicator
+        self.view.addSubview(activityIndicator!)
         
         //UserDefaults에 ID, Password가 저장되어 있는 경우 자동 로그인 실행
         let id = UserDefaults.standard.string(forKey: "id")
@@ -33,8 +42,7 @@ class LoginViewController: UIViewController {
     
     //로그인 버튼
     @IBAction func loginButton(_ sender: Any) {
-        print("loginButton tapped")
-
+        
         guard let id = Common.isEmptyTextField(textField: idTextField) else {
             Common.showToast(view: self.view, message: "아이디 또는 이메일을 입력하여 주십시오.")
             return
@@ -43,14 +51,8 @@ class LoginViewController: UIViewController {
             Common.showToast(view: self.view, message: "비밀번호를 입력하여 주십시오.")
             return
         }
-        
-        print("입력한 아이디 : \(id) 비밀번호 : \(password)")
-        
-        //자동 로그인 - UserDefaults에 ID, Password 저장
-        UserDefaults.standard.set(id, forKey: "id")
-        UserDefaults.standard.set(password, forKey: "password")
-        
-        MoveMainView()  //메인 화면 이동
+
+        login(id, password) //로그인 실행
     }
     
     //회원가입 버튼
@@ -106,24 +108,88 @@ class LoginViewController: UIViewController {
     
     //메인 화면 이동
     func MoveMainView() {
-        
         var mainViewController: UIViewController!
         mainViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Main") as! MainViewController
-        
         let navigationController = UINavigationController(rootViewController: mainViewController)
         
         UIApplication.shared.windows.first?.rootViewController = navigationController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     
+    //로그인 실행
+    func login(_ id: String, _ password: String) {
+        
+        self.activityIndicator?.startAnimating()    //로딩 화면 실행 시작
+        
+        let parameters = ["email": id, "password": password]    //로그인 API 호출 Parameter
+        
+        //로그인 API 호출
+        userApiService.login(parameters) { (status, message) in
+            
+            //API 호출 성공
+            if status == "success" {
+                //로그인 성공
+                if message == "Login Successful" {
+                    //자동 로그인 - UserDefaults에 ID, Password 저장
+                    UserDefaults.standard.set(id, forKey: "id")
+                    UserDefaults.standard.set(password, forKey: "password")
+
+                    self.MoveMainView()  //메인 화면 이동
+                }
+                //로그인 실패
+                else {
+                    /**Error message  정의 완료 후 추가 구현 필요 */
+                    self.activityIndicator?.stopAnimating() //로딩 화면 실행 종료
+                    Common.showToast(view: self.view, message: "회원가입이 실패하였습니다.")
+                }
+            }
+            //API 호출 실패
+            else {
+                self.activityIndicator?.stopAnimating() //로딩 화면 실행 종료
+                Common.showToast(view: self.view, message: "서버와의 통신이 실패하였습니다.")
+            }
+        }
+    }
+    
     //자동 로그인
     func autoLogin(_ id: String, _ password: String) {
         
-        print("Saved ID: \(id) / Saved Password: \(password)")
+        self.activityIndicator?.startAnimating()    //로딩 화면 실행 시작
         
-        //추후 API 연동하여 ID, Password 확인 후 로그인 성공인 경우 처리
-        MoveMainView()  //메인 화면 이동
+        let parameters = ["email": id, "password": password]    //로그인 API 호출 Parameter
+        
+        //로그인 API 호출
+        userApiService.login(parameters) { (status, message) in
+            
+            //API 호출 성공
+            if status == "success" {
+                //로그인 성공
+                if message == "Login Successful" {
+                    self.MoveMainView()  //메인 화면 이동
+                }
+                //로그인 실패
+                else {
+                    self.activityIndicator?.stopAnimating() //로딩 화면 실행 종료
+                    Common.showToast(view: self.view, message: "로그인이 실패하였습니다.")
+                    
+                    //자동 로그인 - UserDefaults 정보 삭제
+                    UserDefaults.standard.removeObject(forKey: "id")
+                    UserDefaults.standard.removeObject(forKey: "password")
+                    
+                    //로그인 화면 이동
+                    var viewController: UIViewController!
+                    viewController = UIStoryboard(name:"Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                    let navigationController = UINavigationController(rootViewController: viewController)
+                    
+                    UIApplication.shared.windows.first?.rootViewController = navigationController
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
+            }
+            //API 호출 실패
+            else {
+                self.activityIndicator?.stopAnimating() //로딩 화면 실행 종료
+                Common.showToast(view: self.view, message: "서버와의 통신이 실패하였습니다.")
+            }
+        }
     }
 }
-
-
