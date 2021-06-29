@@ -140,7 +140,7 @@ class LoginViewController: UIViewController {
                 else {
                     /**Error message  정의 완료 후 추가 구현 필요 */
                     self.activityIndicator?.stopAnimating() //로딩 화면 실행 종료
-                    Common.showToast(view: self.view, message: "회원가입이 실패하였습니다.")
+                    Common.showToast(view: self.view, message: "로그인에 실패하였습니다.")
                 }
             }
             //API 호출 실패
@@ -170,7 +170,7 @@ class LoginViewController: UIViewController {
                 //로그인 실패
                 else {
                     self.activityIndicator?.stopAnimating() //로딩 화면 실행 종료
-                    Common.showToast(view: self.view, message: "로그인이 실패하였습니다.")
+                    Common.showToast(view: self.view, message: "로그인에 실패하였습니다.")
                     
                     //자동 로그인 - UserDefaults 정보 삭제
                     UserDefaults.standard.removeObject(forKey: "id")

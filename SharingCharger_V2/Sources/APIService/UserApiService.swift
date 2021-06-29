@@ -21,6 +21,8 @@ class UserApiService {
         
         apiService.request("/user/v1/login", "POST", parameters) { (result) in
             completionHandler(result.status, result.message)
+            //let email: String = result.data["email"]!
+            //print("Token : \(email)")
         }
     }
     
@@ -29,6 +31,7 @@ class UserApiService {
         
         apiService.request("/user/v1/signup", "POST", parameters) { (result) in
             completionHandler(result.status, result.message)
+            
         }
         
 //            if let data = result["data"] as? [String: Any] {

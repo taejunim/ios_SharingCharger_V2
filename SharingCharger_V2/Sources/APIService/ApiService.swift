@@ -81,12 +81,10 @@ class ApiService {
                 do {
                     let jsonObject = try JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)    //JSON Parsing
                     let jsonData = try JSONDecoder().decode(Results.self, from: jsonObject)
-                    
-                    completionHandler(jsonData)
                 } catch {
                     let results = Results(status: "error", message: "Not Found", data: ["":""])
                     completionHandler(results)
-                    
+
                     print(error.localizedDescription)
                 }
             //API 호출 실패
